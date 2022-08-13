@@ -1,16 +1,77 @@
+#status-container {
+    max-width: 800px;
+    width: 95%;
+    margin: 3em auto;
+    position: relative;
+    box-shadow: 0 10px 30px 0px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+#status-container h1 {
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 2em;
+    line-height: 48px;
+    padding-bottom: 10px;
+    color: #333;
+}
+
+#status-container .form-field {
+    position: relative;
+    margin: 32px 0;
+}
+
+.form-field .input-text {
+    display: block;
+    width: 100%;
+    height: 36px;
+    border-width: 0 0 2px 0;
+    border-color: #ff7300;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+    padding-left: 1em;
+}
+
+.form-field .input-text:not([value=""]) + .label ,.contact-form .input-text:focus + .label {
+    transform: translateY(-24px);
+}
+
+.form-field .input-text:focus {
+    outline: none;
+    color: #ff7300;
+}
+
+.form-field label {
+    font: 18px;
+    line-height: 26px;
+    font-weight: 400;
+    color: #333;
+    text-transform: capitalize;
+}
+
+.form-field .label {
+    position: absolute;
+    left: 20px;
+    bottom: 11px;
+    cursor: text;
+    transition: transform 0.2s ease-in-out;
+}
+
+
 /* Status Check Progress Bar */
 
 .step-wizard {
-    background-color: #21d4fd;
-    background-image: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%);
-    height: 100vh;
+    background-color: #ff7300;
+    height: 30vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.step-wizard-list {
+#status-bar {
     background: #fff;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
     color: #333;
@@ -41,7 +102,7 @@
     position: absolute;
     left: 0;
     top: 19px;
-    background: #21d4fd;
+    background: #ff7300;
     width: 100%;
     height: 2px;
     transform: translateX(-50%);
@@ -66,7 +127,7 @@
     content: "";
     height: 40px;
     width: 40px;
-    background: #21d4fd;
+    background: #ff7300;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -110,9 +171,9 @@
 
 .current-item .progress-count:after {
     background: #fff;
-    border: 2px solid #21d4fd;
+    border: 2px solid #ff7300;
 }
 
 .current-item .progress-count {
-    color: #21d4fd;
+    color: #ff7300;
 }
