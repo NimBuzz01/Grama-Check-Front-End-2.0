@@ -1,6 +1,6 @@
 .dashboard {
     text-transform: capitalize;
-    margin: 6em 3em;
+    margin: 6em;
 }
 
 .dashboard h1 {
@@ -9,7 +9,7 @@
     letter-spacing: 3px;
     font-size: 2em;
     line-height: 48px;
-    padding-bottom: 10px;
+    padding-bottom: 1em;
     color: #333;
 }
 
