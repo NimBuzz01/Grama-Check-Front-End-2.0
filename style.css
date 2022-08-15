@@ -8,12 +8,12 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.btn {
+.btn:not(#close-btn) {
     background-color: #ff7300;
     border-color: #ff7300;
 }
 
-.btn:hover {
+.btn:hover:not(#close-btn) {
     background-color: #f59344;
     border-color: #ff7300;
 }
@@ -21,4 +21,12 @@
 a {
     text-decoration: none;
     color: #212529;
+}
+
+#home {
+    height: 100vh;
+}
+
+#close-btn {
+    border: 1px solid #ced0d1;
 }

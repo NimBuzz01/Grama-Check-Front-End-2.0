@@ -32,7 +32,7 @@
                             User Portal
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="check-status.html">Check Status</a></li>
+                            <li><a class="dropdown-item" href="user-portal.html">Apply for Grama Certificate</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -44,33 +44,36 @@
         </div>
     </nav>
 
-    <!-- application -->
-    <section class="p-5 align-items-center" id="status-container">
-        <h1>Apply for Grama Certificate</h1>
+    <!-- status check -->
+    <section class="bg-dark text-light p-5" id="status-check">
         <div class="container py-5">
-            <div class="form-field">
-                <input onkeyup="this.setAttribute('value', this.value);" value="" id="nic" class="input-text"
-                    type="text" name="">
-                <label for="nic" class="label">National Identity Card</label>
-            </div>
-            <div class="form-field">
-                <input onkeyup="this.setAttribute('value', this.value);" value="" id="address" class="input-text"
-                    type="text" name="">
-                <label for="address" class="label">Address</label>
-            </div>
-
-            <div class="form-field">
-                <label for="formFileMultiple" class="form-label">Upload NIC (Front and Back)</label>
-                <input class="form-control" type="file" id="formFileMultiple" multiple>
-            </div>
-            <div class="form-field">
-                <label for="formFileMultiple" class="form-label">Upload Proof of Address</label>
-                <input class="form-control" type="file" id="formFileMultiple" multiple>
-            </div>
-            <div class="form-field">
-                <button class="btn btn-primary mt-3">Submit</button>
+            <div class="d-md-flex justify-content-between align-items-center">
+                <h3 class="mb-3 mb-md-0">Check Your Status</h3>
+                <div class="input-group news-input">
+                    <input type="text" class="form-control" placeholder="Enter NIC" name="">
+                    <button class="btn btn-primary btn-lg">Submit</button>
+                </div>
             </div>
         </div>
+        <ul class="container py-5" id="status-bar">
+            <li class="step-wizard-item">
+                <span class="progress-count">1</span>
+                <span class="progress-label">Submitted</span>
+            </li>
+            <li class="step-wizard-item current-item">
+                <span class="progress-count">2</span>
+                <span class="progress-label">Pending Police Check</span>
+            </li>
+            <li class="step-wizard-item">
+                <span class="progress-count">3</span>
+                <span class="progress-label">At Grama Sevaka</span>
+            </li>
+            <li class="step-wizard-item">
+                <span class="progress-count">4</span>
+                <span class="progress-label">Completed</span>
+            </li>
+            <!-- <li class="step-wizard-item current-item"> -->
+        </ul>
     </section>
 
     <!-- footer -->
