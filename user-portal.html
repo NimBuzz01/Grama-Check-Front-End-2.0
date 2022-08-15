@@ -58,7 +58,6 @@
                     type="text" name="">
                 <label for="address" class="label">Address</label>
             </div>
-
             <div class="form-field">
                 <label for="formFileMultiple" class="form-label">Upload NIC (Front and Back)</label>
                 <input class="form-control" type="file" id="formFileMultiple" multiple>
@@ -67,10 +66,15 @@
                 <label for="formFileMultiple" class="form-label">Upload Proof of Address</label>
                 <input class="form-control" type="file" id="formFileMultiple" multiple>
             </div>
-            <div class="form-field">
-                <button class="btn btn-primary mt-3">Submit</button>
+            <div class="form-field" id="submit-btn">
+                <button class="btn btn-primary mt-3 px-5 py-2">Submit</button>
             </div>
         </div>
+        <article class="bg-dark text-light p-5 text-center text-c">
+            <h3 class="mb-4 text-uppercase">Applied for Certificate?</h3>
+            <h5 class="mb-3">Check Status Now!</h5>
+            <a href="check-status.html" class="btn btn-primary">Click Here</a>
+        </article>
     </section>
 
     <!-- footer -->
@@ -83,7 +87,8 @@
                         Grama Check
                     </h5>
                     <p>
-                        Grama Check is a Service Created by WSO2 Interns as Part of the GCP Team for the Choreo Project. This Project is built only for Educational Purposes.
+                        Grama Check is a Service Created by WSO2 Interns as Part of the GCP Team for the Choreo Project.
+                        This Project is built only for Educational Purposes.
                     </p>
                     <a href="#"><i class="bi bi-github text-dark mx-1 lead"></i></a>
                     <a href="#"><i class="bi bi-slack text-dark mx-1 lead"></i></a>
@@ -99,10 +104,14 @@
                 <div class="col-lg-2 col-md-2 mx-auto">
                     <h5 class="text-uppercase font-weight-bold mb-4">Page Links</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-1"><a href="#home"><i class="bi bi-chevron-right" style="color: #ff7300;"></i> Home</a></li>
-                        <li class="mb-1"><a href="#user-page"><i class="bi bi-chevron-right" style="color: #ff7300;"></i> User Portal</a></li>
-                        <li class="mb-1"><a href="#officer-page"><i class="bi bi-chevron-right" style="color: #ff7300;"></i> Officer Portal</a></li>
-                        <li class="mb-1"><a href="help.html"><i class="bi bi-chevron-right" style="color: #ff7300;"></i> Help Page</a></li>
+                        <li class="mb-1"><a href="#home"><i class="bi bi-chevron-right" style="color: #ff7300;"></i>
+                                Home</a></li>
+                        <li class="mb-1"><a href="#user-page"><i class="bi bi-chevron-right"
+                                    style="color: #ff7300;"></i> User Portal</a></li>
+                        <li class="mb-1"><a href="#officer-page"><i class="bi bi-chevron-right"
+                                    style="color: #ff7300;"></i> Officer Portal</a></li>
+                        <li class="mb-1"><a href="help.html"><i class="bi bi-chevron-right" style="color: #ff7300;"></i>
+                                Help Page</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-xs-12 location">
@@ -127,7 +136,8 @@
             <p class="mb-0">
                 Copyright &copy; 2022 GCP Grama Check. Designed with &#10084;&#65039; by Niamat Marjan
             </p>
-            <a href="#" class="position-fixed bottom-0 end-0 p-5"><i class="bi bi-arrow-up-square-fill h1" style="color: #ff7300;"></i></a>
+            <a href="#" class="position-fixed bottom-0 end-0 p-5"><i class="bi bi-arrow-up-square-fill h1"
+                    style="color: #ff7300;"></i></a>
         </div>
     </footer>
 </body>
