@@ -30,3 +30,12 @@ a {
 #close-btn {
     border: 1px solid #ced0d1;
 }
+
+.card {
+    
+    transition: 0.3s;
+}
+.card:hover {
+    box-shadow: #ff7300 0px 25px 20px -20px;
+    scale: 1.05;
+}
