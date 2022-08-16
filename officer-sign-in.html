@@ -46,12 +46,13 @@ var onLoginRequest = function(context) {
             var isMember = isMemberOfAnyOfGroups(user, groupsToAllowAccess);
             if (!isMember) {
                 sendError(errorPage, errorPageParameters);
+            }else{
+                adminAuth.signIn();
             }
         }
     });
 };
 
  
-adminAuth.signIn();
 </script>
 </html>
