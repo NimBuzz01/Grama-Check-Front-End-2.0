@@ -20,6 +20,37 @@ adminAuth.initialize({
     scope: ["openid", "profile"]
 });
 
+// This script will allow access for any user who belongs
+// to one of the given groups.
+// If the user is a member of the following groups, user will be given access.
+var groupsToAllowAccess = ['gramaGroup'];
+
+// Error page to redirect unauthorized users,
+// can be either an absolute url or relative url to server root, or empty/null
+// null/empty value will redirect to the default error page
+var errorPage = '';
+
+// Additional query params to be added to the above url.
+// Hint: Use i18n keys for error messages
+var errorPageParameters = {
+    'status': 'Unauthorized',
+    'statusMsg': 'You are not authorized to login to this application.'
+};
+
+var onLoginRequest = function(context) {
+    executeStep(1, {
+        onSuccess: function (context) {
+            // Extracting authenticated subject from the first step.
+            var user = context.currentKnownSubject;
+            // Checking if the user is assigned to one of the given groups.
+            var isMember = isMemberOfAnyOfGroups(user, groupsToAllowAccess);
+            if (!isMember) {
+                sendError(errorPage, errorPageParameters);
+            }
+        }
+    });
+};
+
  
 adminAuth.signIn();
 </script>
