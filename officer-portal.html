@@ -343,7 +343,14 @@ function logOut() {
         }
     })
     
-}     
+}   
+adminAuth.getBasicUserInfo().then((userinfoResponse) => {
+       console.log(userinfoResponse); // check userinfo response
+        // check email
+
+   }).catch((error) => {
+       console.error(error);
+   });  
 
 
 
