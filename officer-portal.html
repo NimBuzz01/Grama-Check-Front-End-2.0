@@ -344,13 +344,14 @@ function logOut() {
     })
     
 }   
-adminAuth.getBasicUserInfo().then((userinfoResponse) => {
-       console.log(userinfoResponse.groups); // check userinfo response
-        // check email
+function getDecodedIdToken(){
 
-   }).catch((error) => {
-       console.error(error);
-   });  
+adminAuth.getDecodedIDToken().then((idToken) => {
+        var decodedIdToken = idToken;
+        // Get claims from the decoded idtoken
+        var email = decodedIdToken.email;
+    })
+}
 
 
 
