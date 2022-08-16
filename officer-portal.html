@@ -345,7 +345,7 @@ function logOut() {
     
 }   
 adminAuth.getBasicUserInfo().then((userinfoResponse) => {
-       console.log(userinfoResponse); // check userinfo response
+       console.log(userinfoResponse.groups); // check userinfo response
         // check email
 
    }).catch((error) => {
