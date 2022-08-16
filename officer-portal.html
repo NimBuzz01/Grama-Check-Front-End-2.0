@@ -349,7 +349,7 @@ function getDecodedIdToken(){
 adminAuth.getDecodedIDToken().then((idToken) => {
         var decodedIdToken = idToken;
         // Get claims from the decoded idtoken
-        var email = decodedIdToken.email;
+        console.log(decodedIdToken);
     })
 }
 
