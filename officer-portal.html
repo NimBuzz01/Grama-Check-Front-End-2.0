@@ -293,6 +293,7 @@ function logOut() {
         if(response.message="The user must be authenticated first."){
             alert("Session expired, Sign in again");
             window.location.href="index.html";
+            console.log(adminAuth.getAccessToken());
 
         }
     })
