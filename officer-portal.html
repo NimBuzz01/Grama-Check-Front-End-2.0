@@ -307,6 +307,16 @@ adminAuth.getDecodedIDToken().then((idToken) => {
     })
 }
 getDecodedIdToken();
+function getBasicUserInfo(){
+   auth.getBasicUserInfo().then((userinfoResponse) => {
+       console.log(userinfoResponse); // check userinfo response
+        // check email
+
+   }).catch((error) => {
+       console.error(error);
+   });
+}
+getBasicUserInfo();
 
 
 
