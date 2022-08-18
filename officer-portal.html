@@ -285,7 +285,10 @@ var adminAuth = AsgardeoAuth.AsgardeoSPAClient.getInstance();
             baseUrl: "https://api.asgardeo.io/t/sample404",
             scope: [ "openid","profile" ]
     });
-adminAuth.signIn({callOnlyOnRedirect:true});
+adminAuth.signIn({callOnlyOnRedirect:true}).then(Response=>{
+    console.log(adminAuth.getAccessToken());
+    
+});
 
 
 function logOut() {
@@ -293,7 +296,7 @@ function logOut() {
         if(response.message="The user must be authenticated first."){
             alert("Session expired, Sign in again");
             window.location.href="index.html";
-            console.log(adminAuth.getAccessToken());
+            
 
         }
     })
