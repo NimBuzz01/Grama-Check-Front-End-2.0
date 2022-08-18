@@ -286,7 +286,9 @@ var adminAuth = AsgardeoAuth.AsgardeoSPAClient.getInstance();
             scope: [ "openid","profile" ]
     });
 adminAuth.signIn({callOnlyOnRedirect:true}).then(Response=>{
-    console.log(adminAuth.getAccessToken());
+    adminAuth.getAccessToken().then(response=>{
+        console.log(response);
+    })
     
 });
 
