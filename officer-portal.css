@@ -92,3 +92,24 @@ table.table-stripped.table-hover tbody tr:hover {
 .info-row span {
     font-weight: 500;
 }
+
+#image-container, .proof-image {
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+.proof-image img {
+    height: 230px;
+    width: auto;
+    object-fit: cover;
+    margin: 0.2em 0;
+    transition: 0.2s linear;
+}
+
+.proof-image img:hover {
+    filter: blur(2px);
+    
+}
