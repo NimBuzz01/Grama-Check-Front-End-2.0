@@ -228,12 +228,16 @@
                             <img src="https://img.freepik.com/premium-photo/3d-rendering-large-modern-contemporary-house-wood-concrete_190619-1484.jpg?w=1380">
                         </div>
                         <div class="proof-image row">
-                            <img src="https://img.freepik.com/premium-photo/3d-rendering-large-modern-contemporary-house-wood-concrete_190619-1484.jpg?w=1380">
+                            <img src="https://img.freepik.com/free-vector/app-development-illustration_52683-47931.jpg?w=1380&t=st=1660921727~exp=1660922327~hmac=92ec9c1db446c11f4cd73ea6bf54c4344a63f10af4baf2e902a6fef73db5b3ff">
                         </div>
                         <div class="proof-image row">
-                            <img src="https://img.freepik.com/premium-photo/3d-rendering-large-modern-contemporary-house-wood-concrete_190619-1484.jpg?w=1380">
+                            <img src="https://img.freepik.com/free-photo/application-form-employment-document-concept_53876-124960.jpg?w=996&t=st=1660921746~exp=1660922346~hmac=3b38ac83ffe5591ee5c00021c4ce4b9a246cf63a6cea3a8297d8b4e429c175de">
                         </div>
                     </div>
+                </div>
+                <div class="popup-img">
+                    <span><i class="bi bi-x-lg"></i></span>
+                    <img src="https://img.freepik.com/premium-photo/3d-rendering-large-modern-contemporary-house-wood-concrete_190619-1484.jpg?w=1380">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light" data-bs-dismiss="modal" id="close-btn">Close</button>
@@ -350,6 +354,22 @@
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/@asgardeo/auth-spa@latest/dist/asgardeo-spa.production.min.js"></script>
+
+<script>
+    document.querySelectorAll('.proof-img img').forEach(image => {
+        image.onclick = () => {
+            document.querySelector('.popup-img').style.display = 'block';
+            document.querySelector('.popup-img img').src = image.getAttribute('src');
+        }
+    })
+
+    document.querySelector('.popup-img span').onclick = () => {
+        document.querySelector('.popup-img').style.display = 'none';
+    }
+</script>
+
+
+
 <script>
 var adminAuth = AsgardeoAuth.AsgardeoSPAClient.getInstance();
     adminAuth.initialize({

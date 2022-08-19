@@ -110,6 +110,34 @@ table.table-stripped.table-hover tbody tr:hover {
 }
 
 .proof-image img:hover {
-    filter: blur(2px);
-    
+    scale: 1.1;    
+}
+
+.popup-img {
+    position: fixed;
+    top: 0; left: 0;
+    background: rgba(0, 0, 0, 0.9);
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+}
+
+.popup-img span {
+    position: absolute;
+    top: 0; right: 10px;
+    font-size: 60px;
+    font-weight: bolder;
+    color: #fff;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.popup-img img {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    border: 5px solid #fff;
+    border-radius: 5px;
+    width: 750px;
+    object-fit: cover;
 }
