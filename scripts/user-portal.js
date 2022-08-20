@@ -1,3 +1,4 @@
+/* Sweet Alerts */
 const preLoadAlert = () => {
     Swal.fire({
       title: "Submitting...",

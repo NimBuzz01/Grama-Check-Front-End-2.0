@@ -240,8 +240,7 @@
                 </div>
                 <div class="popup-img" style="display: none;">
                     <span><i class="bi bi-x-lg"></i></span>
-                    <img
-                        src="https://img.freepik.com/premium-photo/3d-rendering-large-modern-contemporary-house-wood-concrete_190619-1484.jpg?w=1380">
+                    <img src="">
                     <button class="btn btn-primary" id="download-btn" onclick="saveImage()">Download Image</button>
                 </div>
                 <div class="modal-footer">
@@ -251,28 +250,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Delete Modal
-    <div id="delete-modal" class="modal fade lg" tabindex="-1" role="dialog" aria-labelledby="delete-modal"
-        aria-hidden="true">
-
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="delete-modal-label">Delete Request</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Are you sure you want to delete this Request?
-                    <p class="text-warning"><small>This action cannot be undone.</small></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-light" data-bs-dismiss="modal" id="close-btn">Close</button>
-                    <button type="button" class="btn btn-primary" id="success-btn">Delete</button>
-                </div>
-            </div>
-        </div>
-    </div> -->
 
     <!-- guide -->
     <section class="bg-dark text-light p-5">
@@ -360,31 +337,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/@asgardeo/auth-spa@latest/dist/asgardeo-spa.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
-
-<script>
-    document.querySelectorAll('.proof-image img').forEach(image => {
-        image.onclick = () => {
-            document.querySelector('.popup-img').style.display = 'block';
-            document.querySelector('.popup-img img').src = image.getAttribute('src');
-        }
-    })
-
-    document.querySelector('.popup-img span').onclick = () => {
-        document.querySelector('.popup-img').style.display = 'none';
-    }
-
-    function saveImage() {
-        let imagePath = document.querySelector('.popup-img img').src;
-        /*let fileName = getFileName(imagePath);*/
-        saveAs(imagePath, "image.jpg");
-    }
-
-    /*function getFileName(str) {
-        return str.substring(str.lastIndexOf('/') + 1)
-    }*/
-</script>
-
-
+<script src="scripts/officer-portal.js"></script>
 
 <script>
     var adminAuth = AsgardeoAuth.AsgardeoSPAClient.getInstance();
@@ -433,8 +386,6 @@
         });
     }
     getBasicUserInfo();
-
-
 
 </script>
 
