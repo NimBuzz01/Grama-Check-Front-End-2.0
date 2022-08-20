@@ -100,8 +100,7 @@
     </div>
 
     <!-- Info Modal -->
-    <div id="info-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="info-modal"
-        aria-hidden="true">
+    <div id="info-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="info-modal" aria-hidden="true">
 
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
@@ -158,7 +157,7 @@
                             <div class="col-md-9 text-secondary">
                                 Pending
                             </div>
-                        </div>                        
+                        </div>
                         <div class="info-row">
                             <div class="col-md-5">
                                 <span>Division</span>
@@ -205,7 +204,7 @@
                             <div class="col-md-9 text-secondary">
                                 2022-6-09
                             </div>
-                        </div> 
+                        </div>
                         <div class="info-row">
                             <div class="col-md-5">
                                 <span>Officer</span>
@@ -213,7 +212,7 @@
                             <div class="col-md-9 text-secondary">
                                 Mr. Andrew Tate
                             </div>
-                        </div>  
+                        </div>
                         <div class="info-row">
                             <div class="col-md-5">
                                 <span>Summary</span>
@@ -221,23 +220,29 @@
                             <div class="col-md-9 text-secondary">
                                 Need to Arrest This MF soon
                             </div>
-                        </div>                 
+                        </div>
                     </div>
                     <div class="col" id="image-container">
+                        <h5>Proof Images</h5>
                         <div class="proof-image row">
-                            <img src="https://img.freepik.com/premium-photo/3d-rendering-large-modern-contemporary-house-wood-concrete_190619-1484.jpg?w=1380">
+                            <img
+                                src="https://images.pexels.com/photos/1172253/pexels-photo-1172253.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
                         </div>
                         <div class="proof-image row">
-                            <img src="https://img.freepik.com/free-vector/app-development-illustration_52683-47931.jpg?w=1380&t=st=1660921727~exp=1660922327~hmac=92ec9c1db446c11f4cd73ea6bf54c4344a63f10af4baf2e902a6fef73db5b3ff">
+                            <img
+                                src="https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg">
                         </div>
                         <div class="proof-image row">
-                            <img src="https://img.freepik.com/free-photo/application-form-employment-document-concept_53876-124960.jpg?w=996&t=st=1660921746~exp=1660922346~hmac=3b38ac83ffe5591ee5c00021c4ce4b9a246cf63a6cea3a8297d8b4e429c175de">
+                            <img
+                                src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aHVtYW58ZW58MHx8MHx8&w=1000&q=80">
                         </div>
                     </div>
                 </div>
-                <div class="popup-img">
+                <div class="popup-img" style="display: none;">
                     <span><i class="bi bi-x-lg"></i></span>
-                    <img src="https://img.freepik.com/premium-photo/3d-rendering-large-modern-contemporary-house-wood-concrete_190619-1484.jpg?w=1380">
+                    <img
+                        src="https://img.freepik.com/premium-photo/3d-rendering-large-modern-contemporary-house-wood-concrete_190619-1484.jpg?w=1380">
+                    <button class="btn btn-primary" id="download-btn" onclick="saveImage()">Download Image</button>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light" data-bs-dismiss="modal" id="close-btn">Close</button>
@@ -354,9 +359,10 @@
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/@asgardeo/auth-spa@latest/dist/asgardeo-spa.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
 
 <script>
-    document.querySelectorAll('.proof-img img').forEach(image => {
+    document.querySelectorAll('.proof-image img').forEach(image => {
         image.onclick = () => {
             document.querySelector('.popup-img').style.display = 'block';
             document.querySelector('.popup-img img').src = image.getAttribute('src');
@@ -366,57 +372,67 @@
     document.querySelector('.popup-img span').onclick = () => {
         document.querySelector('.popup-img').style.display = 'none';
     }
+
+    function saveImage() {
+        let imagePath = document.querySelector('.popup-img img').src;
+        /*let fileName = getFileName(imagePath);*/
+        saveAs(imagePath, "image.jpg");
+    }
+
+    /*function getFileName(str) {
+        return str.substring(str.lastIndexOf('/') + 1)
+    }*/
 </script>
 
 
 
 <script>
-var adminAuth = AsgardeoAuth.AsgardeoSPAClient.getInstance();
+    var adminAuth = AsgardeoAuth.AsgardeoSPAClient.getInstance();
     adminAuth.initialize({
-            signInRedirectURL: "https://nimbuzz01.github.io/Grama-Check-Front-End-2.0/officer-portal.html",
-            signOutRedirectURL: "https://nimbuzz01.github.io/Grama-Check-Front-End-2.0/index.html",
-            clientID: "RMhFnIyA4u21SQrYA1mGaGNUAo8a",
-            baseUrl: "https://api.asgardeo.io/t/sample404",
-            scope: [ "openid","profile" ]
+        signInRedirectURL: "https://nimbuzz01.github.io/Grama-Check-Front-End-2.0/officer-portal.html",
+        signOutRedirectURL: "https://nimbuzz01.github.io/Grama-Check-Front-End-2.0/index.html",
+        clientID: "RMhFnIyA4u21SQrYA1mGaGNUAo8a",
+        baseUrl: "https://api.asgardeo.io/t/sample404",
+        scope: ["openid", "profile"]
     });
-adminAuth.signIn({callOnlyOnRedirect:true}).then(Response=>{
-    adminAuth.getAccessToken().then(response=>{
-        console.log(response);
-    })
-    
-});
+    adminAuth.signIn({ callOnlyOnRedirect: true }).then(Response => {
+        adminAuth.getAccessToken().then(response => {
+            console.log(response);
+        })
+
+    });
 
 
-function logOut() {
-    adminAuth.signOut().then(response=>{
-        if(response.message="The user must be authenticated first."){
-            alert("Session expired, Sign in again");
-            window.location.href="index.html";
-            
+    function logOut() {
+        adminAuth.signOut().then(response => {
+            if (response.message = "The user must be authenticated first.") {
+                alert("Session expired, Sign in again");
+                window.location.href = "index.html";
 
-        }
-    })
-    
-}   
-function getDecodedIdToken(){
 
-adminAuth.getDecodedIDToken().then((idToken) => {
-        var decodedIdToken = idToken;
-        // Get claims from the decoded idtoken
-        console.log(decodedIdToken);
-    })
-}
-getDecodedIdToken();
-function getBasicUserInfo(){
-   adminAuth.getBasicUserInfo().then((userinfoResponse) => {
-       console.log(userinfoResponse); // check userinfo response
-        // check email
+            }
+        })
 
-   }).catch((error) => {
-       console.error(error);
-   });
-}
-getBasicUserInfo();
+    }
+    function getDecodedIdToken() {
+
+        adminAuth.getDecodedIDToken().then((idToken) => {
+            var decodedIdToken = idToken;
+            // Get claims from the decoded idtoken
+            console.log(decodedIdToken);
+        })
+    }
+    getDecodedIdToken();
+    function getBasicUserInfo() {
+        adminAuth.getBasicUserInfo().then((userinfoResponse) => {
+            console.log(userinfoResponse); // check userinfo response
+            // check email
+
+        }).catch((error) => {
+            console.error(error);
+        });
+    }
+    getBasicUserInfo();
 
 
 
