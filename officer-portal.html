@@ -348,9 +348,23 @@
         baseUrl: "https://api.asgardeo.io/t/sample404",
         scope: ["openid", "profile"]
     });
+
+    function getBasicUserInfo() {
+        adminAuth.getBasicUserInfo().then((userinfoResponse) => {
+            console.log(userinfoResponse); // check userinfo response
+            // check email
+
+        }).catch((error) => {
+            console.error(error);
+        });
+    }
+
+
+
     adminAuth.signIn({ callOnlyOnRedirect: true }).then(Response => {
         adminAuth.getAccessToken().then(response => {
             console.log(response);
+            getBasicUserInfo();
         }).catch(error=>{
             adminAuth.trySignInSilently();
         })
@@ -370,16 +384,8 @@
 
     }
 
-    function getBasicUserInfo() {
-        adminAuth.getBasicUserInfo().then((userinfoResponse) => {
-            console.log(userinfoResponse); // check userinfo response
-            // check email
 
-        }).catch((error) => {
-            console.error(error);
-        });
-    }
-    getBasicUserInfo();
+   
 
 </script>
 
