@@ -351,6 +351,8 @@
     adminAuth.signIn({ callOnlyOnRedirect: true }).then(Response => {
         adminAuth.getAccessToken().then(response => {
             console.log(response);
+        }).catch(error=>{
+            adminAuth.trySignInSilently();
         })
 
     });
@@ -367,15 +369,7 @@
         })
 
     }
-    function getDecodedIdToken() {
 
-        adminAuth.getDecodedIDToken().then((idToken) => {
-            var decodedIdToken = idToken;
-            // Get claims from the decoded idtoken
-            console.log(decodedIdToken);
-        })
-    }
-    getDecodedIdToken();
     function getBasicUserInfo() {
         adminAuth.getBasicUserInfo().then((userinfoResponse) => {
             console.log(userinfoResponse); // check userinfo response
