@@ -23,6 +23,9 @@ var adminAuth = AsgardeoAuth.AsgardeoSPAClient.getInstance();
  
 adminAuth.signIn().then(response=>{
   console.log(response);
+  adminAuth.on("sign-in", (response) => {
+    window.location.href="officer-portal.html";
+});
 });
 adminAuth.signIn({ callOnlyOnRedirect: true })
 </script>
