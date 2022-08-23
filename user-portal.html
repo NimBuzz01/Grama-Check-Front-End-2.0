@@ -12,7 +12,7 @@
     <link href="user-portal.css" rel="stylesheet">
 </head>
 
-<body>
+<body onload="createCaptcha()">
     <!-- nav bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3 sticky-top">
         <div class="container">
@@ -69,20 +69,23 @@
                 <label for="address-image" class="form-label">Upload Proof of Address</label>
                 <input class="form-control" type="file" id="address-image" accept="image/png, image/jpg">
             </div>
-            <div class="form-field" id="captcha">
+            <div class="form-field">
                 <label for="captcha-input" class="form-label">Enter Captcha</label>
-                <div class="captcha-preview" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off></div>
+                <div id="captcha">
+                </div>
                 <div class="form-field d-flex">
-                    <input onkeyup="this.setAttribute('value', this.value);" value="" id="captcha-form" class="input-text"
-                    type="text" name="">
+                    <input onkeyup="this.setAttribute('value', this.value);" value="" id="captcha-form"
+                        class="input-text" type="text" name="">
                     <label for="captcha-form" class="label">Enter Captcha Text</label>
-                    <button class="captcha-refresh"><i class="bi bi-arrow-repeat h2 p-3"
+                    <button class="captcha-refresh" onclick="createCaptcha()"><i class="bi bi-arrow-repeat h2 p-3"
                             style="color: #ff7300;"></i></button>
                 </div>
+
             </div>
-            <div class="form-field" id="submit-btn">
-                <button class="btn btn-primary mt-3 px-5 py-2" id="submit-btn-f" onclick="preLoadAlert()">Submit</button>
-            </div>
+        </div>
+        <div class="form-field" id="submit-btn">
+            <button class="btn btn-primary mt-3 px-5 py-2" id="submit-btn-f" onclick="validateCaptcha()">Submit</button>
+        </div>
         </div>
         <article class="bg-dark text-light p-5 text-center text-c">
             <h3 class="mb-4 text-uppercase">Applied for Certificate?</h3>

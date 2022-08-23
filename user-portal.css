@@ -34,7 +34,8 @@
     padding-left: 1em;
 }
 
-.form-field .input-text:not([value=""]) + .label ,.contact-form .input-text:focus + .label {
+.form-field .input-text:not([value=""])+.label,
+.contact-form .input-text:focus+.label {
     transform: translateY(-24px);
 }
 
@@ -184,6 +185,19 @@
     color: #ff7300;
 }
 
+canvas {
+    /*prevent interaction with the canvas*/
+    pointer-events: none;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;  
+    padding-left: 3em;  
+    border: 1px solid black;
+}
+
+
 .captcha-preview {
     color: #555;
     width: 100%;
@@ -193,7 +207,7 @@
     letter-spacing: 8px;
     border: 1px solid #888;
     margin-bottom: 1em;
-    
+
 }
 
 .captcha-refresh {

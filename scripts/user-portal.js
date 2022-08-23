@@ -1,61 +1,61 @@
 // Sweet Alerts
-const preLoadAlert = () => {
-  Swal.fire({
-    title: "Submitting...",
-    text: "Please wait",
-    imageUrl:
-      "https://www.epgdlaw.com/wp-content/uploads/2017/09/ajax-loader.gif",
-    showConfirmButton: false,
-    allowOutsideClick: false,
-  }).then((result) => {
-    if (result.isConfirmed) {
-      reqTest();
-    }
-  });
-
-  const reqTest = () => {
-    Swal.close();
-    Swal.fire("Request Submitted!");
-  };
-};
-
-// captcha functions
-// (function(){
-//   const fonts = ["cursive", "sans-serif","serif","monospace"];
-//   let captchaValue = "";
-//   function generateCaptcha(){
-//     let value = btoa(Math.random()*1000000000);
-//     value = value.substr(0, 5+Math.random()*5);
-//     captchaValue = value;
-//   }
-
-//   function setCaptcha() {
-//     let html = captchaValue.split("").map((char)=> {
-//       const rotate = -20 + Math.trunc(Math.random()*30);
-//       const font = Math.trunc(Math.random()*fonts.length);
-//       return `<span style="transform:rotate(${rotate}deg); font-family:${fonts[font]}; ">${char}</span>`;
-//     }).join("");
-//     document.querySelector(".captcha-preview").innerHTML = html;
-//   }
-//   function initCaptcha() {
-//     document.querySelector(".captcha-refresh").addEventListener("click", function(){
-//       generateCaptcha();
-//       setCaptcha();
-//     });
-//     generateCaptcha();
-//     setCaptcha();
-//   }
-//   initCaptcha();
-
-//   document.querySelector("#submit-btn-f").addEventListener("click",function(){
-//     let inputCaptchaValue = document.querySelector("#captcha-form").value;
-//     if(inputCaptchaValue === captchaValue) {
-//       Swal.fire("", "Logging In!!", "success");
-//     } else {
-//       Swal.fire("Invalid Captcha");
+// const preLoadAlert = () => {
+//   Swal.fire({
+//     title: "Submitting...",
+//     text: "Please wait",
+//     imageUrl:
+//       "https://www.epgdlaw.com/wp-content/uploads/2017/09/ajax-loader.gif",
+//     showConfirmButton: false,
+//     allowOutsideClick: false,
+//   }).then((result) => {
+//     if (result.isConfirmed) {
+//       reqTest();
 //     }
-//   })
-// })();
+//   });
+
+//   const reqTest = () => {
+//     Swal.close();
+//     Swal.fire("Request Submitted!");
+//   };
+// };
+
+var code;
+function createCaptcha() {
+  //clear the contents of captcha div first 
+  document.getElementById('captcha').innerHTML = "";
+  var charsArray =
+  "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@!#$%^&*";
+  var lengthOtp = 6;
+  var captcha = [];
+  for (var i = 0; i < lengthOtp; i++) {
+    //below code will not allow Repetition of Characters
+    var index = Math.floor(Math.random() * charsArray.length + 1); //get the next character from the array
+    if (captcha.indexOf(charsArray[index]) == -1)
+      captcha.push(charsArray[index]);
+    else i--;
+  }
+  var canv = document.createElement("canvas");
+  canv.id = "captcha";
+  canv.width = 100;
+  canv.height = 50;
+  var ctx = canv.getContext("2d");
+  ctx.font = "25px Georgia";
+  ctx.strokeText(captcha.join(""), 0, 30);
+  //storing captcha so that can validate you can save it somewhere else according to your specific requirements
+  code = captcha.join("");
+  document.getElementById("captcha").appendChild(canv); // adds the canvas to the body element
+}
+function validateCaptcha() {
+  event.preventDefault();
+  debugger
+  if (document.getElementById("captcha-form").value == code) {
+    Swal.fire("", "Valid Captcha!!", "success");
+    } else {
+      Swal.fire("Invalid Captcha");
+      createCaptcha();
+    }
+}
+
 function getBasicUserInfo() {
   userAuth.getBasicUserInfo().then((userinfoResponse) => {
       console.log(userinfoResponse); // check userinfo response
