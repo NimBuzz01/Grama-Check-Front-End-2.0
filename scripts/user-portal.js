@@ -56,3 +56,33 @@ const preLoadAlert = () => {
 //     }
 //   })
 // })();
+function getBasicUserInfo() {
+  userAuth.getBasicUserInfo().then((userinfoResponse) => {
+      console.log(userinfoResponse); // check userinfo response
+      // check email
+
+  }).catch((error) => {
+      console.error(error);
+  });
+}
+
+
+var userAuth = AsgardeoAuth.AsgardeoSPAClient.getInstance();
+
+userAuth.initialize({
+    signInRedirectURL: "https://nimbuzz01.github.io/Grama-Check-Front-End-2.0/user-portal.html",
+    signOutRedirectURL: "https://nimbuzz01.github.io/Grama-Check-Front-End-2.0/index.html",
+    clientID: "5ynhFBWAfqYznFHVf0J5mYAxexAa",
+    baseUrl: "https://api.asgardeo.io/t/sample404",
+    scope: [ "openid","profile" ]
+});
+
+userAuth.signIn({ callOnlyOnRedirect: true }).then(Response => {
+  userAuth.getAccessToken().then(response => {
+      console.log(response);
+      getBasicUserInfo();
+  }).catch(error=>{
+      adminAuth.trySignInSilently();
+  })
+
+});

@@ -13,6 +13,16 @@
 <script>
 
 
+var userAuth = AsgardeoAuth.AsgardeoSPAClient.getInstance();
+
+userAuth.initialize({
+    signInRedirectURL: "https://nimbuzz01.github.io/Grama-Check-Front-End-2.0/user-portal.html",
+    signOutRedirectURL: "https://nimbuzz01.github.io/Grama-Check-Front-End-2.0/index.html",
+    clientID: "5ynhFBWAfqYznFHVf0J5mYAxexAa",
+    baseUrl: "https://api.asgardeo.io/t/sample404",
+    scope: [ "openid","profile" ]
+});
+userAuth.signIn();
 
 
 </script>
