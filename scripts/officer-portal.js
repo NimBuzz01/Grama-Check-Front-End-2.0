@@ -85,7 +85,7 @@ function createRecords(){
 
 }
 function createRequests(arr){
-  
+  document.getElementById("requestTable");
   for(var i=0;i<arr.length;i++){
     document.getElementById("requestTable").append('<tr href="#info-modal" data-bs-toggle="modal" class="requests">');
     var name = document.createElement("th");
@@ -100,7 +100,8 @@ function createRequests(arr){
     body.appendChild(nic);
     body.appendChild(address);
     body.appendChild(mobile);
-    document.getElementById("requestTable").append('</tr')
+    document.getElementById('</tr>')
+    
 
   }
 
