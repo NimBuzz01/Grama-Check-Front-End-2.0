@@ -87,7 +87,7 @@ function createRecords(){
 function createRequests(arr){
   
   for(var i=0;i<arr.length;i++){
-    document.getElementById("requestTable").appendChild('<tr href="#info-modal" data-bs-toggle="modal" class="requests">');
+    document.getElementById("requestTable").append('<tr href="#info-modal" data-bs-toggle="modal" class="requests">');
     var name = document.createElement("th");
     name.appendChild(document.createTextNode(arr[i].user_full_name));
     var nic = document.createElement("th");
@@ -100,7 +100,7 @@ function createRequests(arr){
     body.appendChild(nic);
     body.appendChild(address);
     body.appendChild(mobile);
-    document.getElementById("requestTable").appendChild('</tr')
+    document.getElementById("requestTable").append('</tr')
 
   }
 
