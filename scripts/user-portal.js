@@ -19,6 +19,7 @@
 //   };
 // };
 
+// captcha code
 var code;
 function createCaptcha() {
   //clear the contents of captcha div first 
