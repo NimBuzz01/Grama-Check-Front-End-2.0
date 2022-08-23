@@ -81,8 +81,7 @@ userAuth.signIn({ callOnlyOnRedirect: true }).then(Response => {
   userAuth.getAccessToken().then(response => {
       console.log(response);
       getBasicUserInfo();
-  }).catch(error=>{
-      userAuth.trySignInSilently();
   })
-
-});
+}).catch(error=>{
+  userAuth.trySignInSilently();
+})
