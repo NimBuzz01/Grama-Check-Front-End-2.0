@@ -67,6 +67,11 @@ function createRecords(){
       officer_id:gramaId
     }).then(response=>{
       console.log(response);
+      var userData = response.data.filterd_certificate_data;
+
+
+
+
     })
 
 
@@ -76,6 +81,27 @@ function createRecords(){
     console.error(error);
 });
 
+
+}
+function createRequests(arr){
+  var body = document.getElementById("requestTable");
+  for(var i=0;i<arr.length;i++){
+    body.appendChild('<tr href="#info-modal" data-bs-toggle="modal" class="requests">');
+    var name = document.createElement("th");
+    name.appendChild(document.createTextNode(arr[i].user_full_name));
+    var nic = document.createElement("th");
+    nic.appendChild(document.createTextNode(arr[i].user_nic));
+    var address = document.createElement("th");
+    address.appendChild(document.createTextNode(arr[i].user_provided_address));
+    var mobile = document.createElement("th");
+    mobile.appendChild(document.createTextNode(arr[i].user_phone_number));
+    body.appendChild(name);
+    body.appendChild(nic);
+    body.appendChild(address);
+    body.appendChild(mobile);
+    
+
+  }
 
 }
 
