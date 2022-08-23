@@ -82,7 +82,7 @@ userAuth.signIn({ callOnlyOnRedirect: true }).then(Response => {
       console.log(response);
       getBasicUserInfo();
   }).catch(error=>{
-      adminAuth.trySignInSilently();
+      userAuth.trySignInSilently();
   })
 
 });
