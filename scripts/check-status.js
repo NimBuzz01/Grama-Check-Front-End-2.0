@@ -12,7 +12,9 @@ function submit(){
         }
     }
     
-    )
+    ).then(response=>{
+        console.log(response);
+    })
 
 
 }
