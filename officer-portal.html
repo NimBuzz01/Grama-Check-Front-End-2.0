@@ -337,56 +337,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/@asgardeo/auth-spa@latest/dist/asgardeo-spa.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="scripts/officer-portal.js"></script>
 
-<script>
-    var adminAuth = AsgardeoAuth.AsgardeoSPAClient.getInstance();
-    adminAuth.initialize({
-        signInRedirectURL: "https://nimbuzz01.github.io/Grama-Check-Front-End-2.0/officer-portal.html",
-        signOutRedirectURL: "https://nimbuzz01.github.io/Grama-Check-Front-End-2.0/index.html",
-        clientID: "RMhFnIyA4u21SQrYA1mGaGNUAo8a",
-        baseUrl: "https://api.asgardeo.io/t/sample404",
-        scope: ["openid", "profile"]
-    });
-
-    function getBasicUserInfo() {
-        adminAuth.getBasicUserInfo().then((userinfoResponse) => {
-            console.log(userinfoResponse); // check userinfo response
-            // check email
-
-        }).catch((error) => {
-            console.error(error);
-        });
-    }
-
-
-
-    adminAuth.signIn({ callOnlyOnRedirect: true }).then(Response => {
-        adminAuth.getAccessToken().then(response => {
-            console.log(response);
-            getBasicUserInfo();
-        }).catch(error=>{
-            adminAuth.trySignInSilently();
-        })
-
-    });
-
-
-    function logOut() {
-        adminAuth.signOut().then(response => {
-            if (response.message = "The user must be authenticated first.") {
-                alert("Session expired, Sign in again");
-                window.location.href = "index.html";
-
-
-            }
-        })
-
-    }
-
-
-   
-
-</script>
 
 </html>
