@@ -85,7 +85,7 @@ function createRecords(){
 
 }
 function createRequests(arr){
-  document.getElementById("requestTable");
+  body = document.getElementById("requestTable");
   for(var i=0;i<arr.length;i++){
     document.getElementById("requestTable").append('<tr href="#info-modal" data-bs-toggle="modal" class="requests">');
     var name = document.createElement("th");
