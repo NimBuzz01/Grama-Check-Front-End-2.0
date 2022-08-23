@@ -24,7 +24,7 @@ function changeStatus(Status){
 
     }
     id="status-"+Status;
-    document.getElementById(Status).className="step-wizard-item current-item";
+    document.getElementById(id).className="step-wizard-item current-item";
 
 }
 
