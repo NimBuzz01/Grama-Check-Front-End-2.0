@@ -76,9 +76,8 @@ function createRecords(){
 });
 
 
-
-
 }
+createRecords();
 
    
 
