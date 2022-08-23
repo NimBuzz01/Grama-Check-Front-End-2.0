@@ -68,6 +68,7 @@ function createRecords(){
     }).then(response=>{
       console.log(response);
       var userData = response.data.filterd_certificate_data;
+      createRequests(userData);
 
 
 
