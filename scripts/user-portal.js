@@ -1,21 +1,58 @@
-/* Sweet Alerts */
+// Sweet Alerts
 const preLoadAlert = () => {
-    Swal.fire({
-      title: "Submitting...",
-      text: "Please wait",
-      imageUrl: "https://www.epgdlaw.com/wp-content/uploads/2017/09/ajax-loader.gif",
-      showConfirmButton: true,
-      allowOutsideClick: false
-    }).then((result) => {
-        if (result.isConfirmed) {
-          reqTest();
-        }
-      })
+  Swal.fire({
+    title: "Submitting...",
+    text: "Please wait",
+    imageUrl:
+      "https://www.epgdlaw.com/wp-content/uploads/2017/09/ajax-loader.gif",
+    showConfirmButton: false,
+    allowOutsideClick: false,
+  }).then((result) => {
+    if (result.isConfirmed) {
+      reqTest();
+    }
+  });
 
-   
-const reqTest = () => {
+  const reqTest = () => {
     Swal.close();
-    Swal.fire(
-        'Request Submitted!'
-      )}
-}
+    Swal.fire("Request Submitted!");
+  };
+};
+
+// captcha functions
+// (function(){
+//   const fonts = ["cursive", "sans-serif","serif","monospace"];
+//   let captchaValue = "";
+//   function generateCaptcha(){
+//     let value = btoa(Math.random()*1000000000);
+//     value = value.substr(0, 5+Math.random()*5);
+//     captchaValue = value;
+//   }
+
+//   function setCaptcha() {
+//     let html = captchaValue.split("").map((char)=> {
+//       const rotate = -20 + Math.trunc(Math.random()*30);
+//       const font = Math.trunc(Math.random()*fonts.length);
+//       return `<span style="transform:rotate(${rotate}deg); font-family:${fonts[font]}; ">${char}</span>`;
+//     }).join("");
+//     document.querySelector(".captcha-preview").innerHTML = html;
+//   }
+//   function initCaptcha() {
+//     document.querySelector(".captcha-refresh").addEventListener("click", function(){
+//       generateCaptcha();
+//       setCaptcha();
+//     });
+//     generateCaptcha();
+//     setCaptcha();
+//   }
+//   initCaptcha();
+
+//   document.querySelector("#submit-btn-f").addEventListener("click",function(){
+//     let inputCaptchaValue = document.querySelector("#captcha-form").value;
+//     if(inputCaptchaValue === captchaValue) {
+//       Swal.fire("", "Logging In!!", "success");
+//     } else {
+//       Swal.fire("Invalid Captcha");
+//     }
+//   })
+// })();

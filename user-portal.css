@@ -183,3 +183,23 @@
 .current-item .progress-count {
     color: #ff7300;
 }
+
+.captcha-preview {
+    color: #555;
+    width: 100%;
+    text-align: center;
+    height: 100px;
+    line-height: 40px;
+    letter-spacing: 8px;
+    border: 1px solid #888;
+    margin-bottom: 1em;
+    
+}
+
+.captcha-refresh {
+    width: 40px;
+    border: none;
+    outline: none;
+    background: #fff;
+    cursor: pointer;
+}

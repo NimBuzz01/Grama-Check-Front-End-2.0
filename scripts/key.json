@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "choreo-asgardeo-project-dev",
+  "private_key_id": "0ccbc50262ed45fc922df6c613c80f340910caea",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDAI/vEDr5t1sVj\n2MIYwAxMp1yfF9PIoK03F1847hu1hlz/vxt4WlV0Snu7WmqcJLuiqTmWFrr3lamn\nm8a2oldxLag7pPT7Mo1d56DR3cyVfzibJG38mLb5TMX5S4Eu2Pb895WHtljup+mH\ntbjdOq3r9FzOC1PefaD6Z9NxB1Q5BkoIBhsmJ2aii+jy2pEpNp81gPxDknOc6dRL\njM6DvQEYFSTshEAqHgNdVRHupQjgeDUz/Tl9r4vFtFtlv9wwC2YQm9jGgwlOIl+/\nN2VW9dDLygRPfP4CD8ciDJxMAD83aonqx/YcZjwhGC+pApXrAqJ9ZJ1Wj3IRP8hX\nPLFUtxyNAgMBAAECggEAH/fcs8ogNPY+8VXnNWb+pOJTrsSwH/lb2Iay+S3kvlcU\nshiB4YxmG2spGwr4IfKapX2ybx5pDTiBebmZXlm0YshN7V6MxB6tFqqrPz/AAj+g\nk2+EPTrLdr8nUUsWu0yuC3jGEEZulYaqfEHn+CcDOPb3WfDYi3QrjH4p1+x4PuRa\nkYlnIPcLHMVz/JEc9SPu04husmvAr1BOjsW7Zku+gzBMwENZqZiIbGE2g3269cO1\nJV6JcxhOshfvSaoE8aOrrfJk0ai38l09YQyjrbJapmyF3Lu6bb52dXc1/GGFvKzB\nTCH7thHdQ3r/p37X5xRur83LdP7TA+Y98JMco87DoQKBgQD8Zn9hRDvWBBlckO10\nzSScOB6/dEADw8vhx3WiRL+gGsK8eWoLUn9rKOshQ+2nCmjEBEFxH1GO4y3urVII\nZn4xsSlWoTRwP/ufQXeUyWpxDFK89ui9XHAEEgsgIvfto3nWeUXlJS+NXCgp+sME\nD9URvqP4oAE1hdyhehfoREuDawKBgQDC4XrgtLK/S/sTkPMV07EAv5uojVbfJ2pA\nq87PjkUzj9mj+cSDzHyNMh8ekpNbXkMGSoFl6YBRKP14g/8LrAycMyqyIfvrP51F\n4l+6JbnB9cP/MXmaA+OnjGXjYKOYzesdKm9Jr7XycnpfZok1r1BdXtvNB3Pw+fv+\nsqvk4xNV5wKBgQDbOMNGXheCiUjl51L3cf5sWSoLrBK1smfxEGcRq5isnNGrFeGP\nN/ZHwuCGohNWVGouZmvYrxUNgDAy8AMiHLNawb9f6OA85rXL2vbcGh0DV2q9ic8Y\nOaNpRaq4HOcuViDKscaNgkDNDNAttgmQC5hKs0SD+6VRMZUyA3OkXz0fRQKBgAws\nhb6PyzLEDlU0ktrkNIR1c8XdvnWGQs7zbKHuo0gLTm895RbOqWEwpl0EjwwAIXO9\nJ8Q0B/4J73ud00rpXohLcflawh/6A1sgPxaj0KzbK3k/n/cNEyWeUacYnF+pTWyu\n//C8d0ND/30CLMQbxYtvp49xTb7Z/vH0O2S7ArQ1AoGAJmK7/dgkDXPD4ATzvSX5\n7Kryhc8M2NOdYkSRiQ1CfGOd8GO9IoFob7ksgh9/9Xs3WYcL9OsvLKW9h1OBs0ha\nLGGqkiz5dj3SfCsIze4+i12m5ND6DYfBJXP7JN6ANkfCotvzlVKh8vk5nznxgFF9\nnblD5K8ebdWForj+z5pLOIo=\n-----END PRIVATE KEY-----\n",
+  "client_email": "choreo-asgardeo-project-dev@appspot.gserviceaccount.com",
+  "client_id": "100754777559066347036",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/choreo-asgardeo-project-dev%40appspot.gserviceaccount.com"
+}

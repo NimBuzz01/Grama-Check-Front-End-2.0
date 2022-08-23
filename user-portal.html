@@ -58,15 +58,30 @@
                 <label for="address" class="label">Address</label>
             </div>
             <div class="form-field">
-                <label for="formFileMultiple" class="form-label">Upload NIC (Front and Back)</label>
-                <input class="form-control" type="file" id="formFileMultiple" multiple>
+                <label for="nic-img-f" class="form-label">Upload NIC (Front)</label>
+                <input class="form-control" type="file" id="nic-img-f" accept="image/png, image/jpg">
             </div>
             <div class="form-field">
-                <label for="formFileMultiple" class="form-label">Upload Proof of Address</label>
-                <input class="form-control" type="file" id="formFileMultiple" multiple>
+                <label for="nic-img-b" class="form-label">Upload NIC (Back)</label>
+                <input class="form-control" type="file" id="nic-img-b" accept="image/png, image/jpg">
+            </div>
+            <div class="form-field">
+                <label for="address-image" class="form-label">Upload Proof of Address</label>
+                <input class="form-control" type="file" id="address-image" accept="image/png, image/jpg">
+            </div>
+            <div class="form-field" id="captcha">
+                <label for="captcha-input" class="form-label">Enter Captcha</label>
+                <div class="captcha-preview"></div>
+                <div class="form-field d-flex">
+                    <input onkeyup="this.setAttribute('value', this.value);" value="" id="captcha-form" class="input-text"
+                    type="text" name="">
+                    <label for="captcha-form" class="label">Enter Captcha Text</label>
+                    <button class="captcha-refresh"><i class="bi bi-arrow-repeat h2 p-3"
+                            style="color: #ff7300;"></i></button>
+                </div>
             </div>
             <div class="form-field" id="submit-btn">
-                <button class="btn btn-primary mt-3 px-5 py-2" onclick="preLoadAlert()">Submit</button>
+                <button class="btn btn-primary mt-3 px-5 py-2" id="submit-btn-f" onclick="preLoadAlert()">Submit</button>
             </div>
         </div>
         <article class="bg-dark text-light p-5 text-center text-c">
