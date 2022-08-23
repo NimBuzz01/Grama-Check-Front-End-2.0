@@ -9,8 +9,20 @@ function submit(){
     
     ).then(response=>{
         console.log(response);
+        changeStatus(2);
     })
 
+
+}
+function changeStatus(Status){
+    var list = document.getElementById("status-bar");
+    var listItems = list.getElementsByTagName("li");
+    for( var i=0;i<listItems.length;i++){
+        if(listItems[i].className=="step-wizard-item current-item"){
+            listItems[i].className="step-wizard-item";
+        }
+
+    }
 
 }
 
