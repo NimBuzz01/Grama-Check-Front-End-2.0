@@ -71,7 +71,7 @@
             </div>
             <div class="form-field" id="captcha">
                 <label for="captcha-input" class="form-label">Enter Captcha</label>
-                <div class="captcha-preview"></div>
+                <div class="captcha-preview" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off></div>
                 <div class="form-field d-flex">
                     <input onkeyup="this.setAttribute('value', this.value);" value="" id="captcha-form" class="input-text"
                     type="text" name="">
