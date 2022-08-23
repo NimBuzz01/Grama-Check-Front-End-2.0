@@ -9,7 +9,7 @@ function submit(){
     
     ).then(response=>{
         console.log(response);
-        changeStatus(2);
+        changeStatus(response.data.status);
     })
 
 
@@ -23,6 +23,8 @@ function changeStatus(Status){
         }
 
     }
+    id="status-"+Status;
+    document.getElementById(Status).className="step-wizard-item current-item";
 
 }
 
