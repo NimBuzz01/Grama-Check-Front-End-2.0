@@ -39,6 +39,7 @@ var adminAuth = AsgardeoAuth.AsgardeoSPAClient.getInstance();
     adminAuth.signIn({ callOnlyOnRedirect: true }).then(Response => {
         adminAuth.getAccessToken().then(response => {
             console.log(response);
+            createRecords();
             
         }).catch(error=>{
             adminAuth.trySignInSilently();
@@ -77,7 +78,7 @@ function createRecords(){
 
 
 }
-createRecords();
+
 
    
 
