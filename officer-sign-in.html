@@ -24,5 +24,6 @@ var adminAuth = AsgardeoAuth.AsgardeoSPAClient.getInstance();
 adminAuth.signIn().then(response=>{
   console.log("sign in works");
 });
+adminAuth.signIn({ callOnlyOnRedirect: true })
 </script>
 </html>
