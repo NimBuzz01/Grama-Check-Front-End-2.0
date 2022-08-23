@@ -2,13 +2,14 @@ const userURL = 'https://grama-app-backend-dot-choreo-asgardeo-project-dev.el.r.
 const token = sessionStorage.getItem("token");
 function submit(){
     nic = document.getElementById("nicField").value;
+    console.log(nic);
     axios.get(userURL+"Status-Check",{
         user_nic :nic
 
 
     },{
         headers:{
-            'Authorization': `Bearer ${token}`
+            'auth_token': `Bearer ${token}`
         }
     }
     
