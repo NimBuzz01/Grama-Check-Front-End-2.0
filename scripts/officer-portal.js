@@ -138,7 +138,7 @@ function createRequests(arr,token,gramaId){
         document.getElementById("officer").innerHTML = policeData.police_officer_id;
         document.getElementById("summary").innerHTML = policeData.criminal_history;
         $('#info-modal').modal('toggle');
-        document.getElementById("markAsDone").onclick=sendRequest(this.id,gramaId,token,arr);
+        document.getElementById("markAsDone").onclick=sendRequest(this.id,gramaId,token);
       })
 
 
@@ -150,7 +150,7 @@ function createRequests(arr,token,gramaId){
 
 }
 
-function sendRequest(idNumber,gramaId,token,arr){
+function sendRequest(idNumber,gramaId,token){
 
   axios.put(gramaURL+"Update-Certificate-Status",{
     user_nic:idNumber,
@@ -161,8 +161,8 @@ function sendRequest(idNumber,gramaId,token,arr){
     }
 
   }).then(response=>{
-    createRequests(arr,token,gramaId)
-    console.log(response);
+    document.getElementById("requestTable").innerHTML="";
+    createRecords(token);
   })
 
 }
