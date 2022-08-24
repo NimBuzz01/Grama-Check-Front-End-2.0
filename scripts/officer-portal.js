@@ -101,9 +101,10 @@ function createRequests(arr){
     content.appendChild(nic);
     content.appendChild(address);
     content.appendChild(mobile);
+    content.id=arr[i].user_nic;
     content.onclick= function(){
       $('#info-modal').modal('toggle');
-      sessionStorage.setItem("nic",this.address.innerHTML);
+      sessionStorage.setItem("nic",this.id);
 
 
     }
