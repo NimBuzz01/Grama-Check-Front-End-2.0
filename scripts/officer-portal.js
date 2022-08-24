@@ -108,9 +108,9 @@ function createRequests(arr,token,gramaId){
     content.id=arr[i].user_nic;
     content.onclick= function(){
       
-     
+      idNumber=this.id;
       axios.post(gramaURL+"Fetch-Certificate-Details",{
-        user_nic:this.id,
+        user_nic:idNumber,
         officer_id:gramaId
       },{
         headers:{
@@ -139,7 +139,7 @@ function createRequests(arr,token,gramaId){
         document.getElementById("summary").innerHTML = policeData.criminal_history;
         $('#info-modal').modal('toggle');
         document.getElementById("markAsDone").onclick=function(){
-          sendRequest(this.id,gramaId,token);
+          sendRequest(idNumber,gramaId,token);
         }
       })
 
