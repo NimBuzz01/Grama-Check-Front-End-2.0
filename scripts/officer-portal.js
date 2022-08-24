@@ -160,6 +160,8 @@ function sendRequest(idNumber,gramaId,token){
       'Authorization': `Bearer ${token}`
     }
 
+  }).then(response=>{
+    console.log(response);
   })
 
 }
