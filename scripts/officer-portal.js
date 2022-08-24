@@ -103,7 +103,7 @@ function createRequests(arr){
     content.appendChild(mobile);
     content.onclick= function(){
       $('#info-modal').modal('toggle');
-      sessionStorage.setItem("nic",this.address.innetHTML);
+      sessionStorage.setItem("nic",this.address.innerHTML);
 
 
     }
