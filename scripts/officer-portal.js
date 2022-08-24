@@ -108,7 +108,27 @@ function createRequests(arr){
       axios.post(gramaURL+"Fetch-Certificate-Details",{
         user_nic:this.id
       }).then(response=>{
-        console.log(response);
+        //User Data
+        document.getElementById("name").innerHTML=response.data.certificate_data.user_full_name;
+        document.getElementById("nic").innerHTML = response.data.certificate_data.user_nic;
+        document.getElementById("date").innerHTML = response.data.certificate_data.application_date;
+        document.getElementById("phone").innerHTML = response.data.certificate_data.user_phone_number;
+        document.getElementById("gramaId").innerHTML = response.data.certificate_data.officer_id;
+        document.getElementById("status").innerHTML = response.data.status;
+        document.getElementById("division").innerHTML = response.data.certificate_data.user_district;
+        document.getElementById("secDivision").innerHTML = response.data.certificate_data.user_sec_division;
+        
+        //Police data
+        var policeData = response.data.certificate_data.police_data;
+
+
+        document.getElementById("caseNumber").innerHTML = policeData.report_number;
+        document.getElementById("severity").innerHTML = policeData.suspect_severity;
+        document.getElementById("caseDate").innerHTML = "";
+        document.getElementById("officer").innerHTML = policeData.police_officer_id;
+        document.getElementById("summary").innerHTML = policeData.criminal_history;
+
+
       })
 
 
