@@ -105,6 +105,11 @@ function createRequests(arr){
     content.onclick= function(){
       $('#info-modal').modal('toggle');
       sessionStorage.setItem("nic",this.id);
+      axios.post(gramaURL+"Fetch-Certificate-Details",{
+        user_nic:this.id
+      }).then(response=>{
+        console.log(response);
+      })
 
 
     }
