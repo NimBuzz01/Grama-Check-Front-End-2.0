@@ -138,7 +138,7 @@ function createRequests(arr,token,gramaId){
         document.getElementById("officer").innerHTML = policeData.police_officer_id;
         document.getElementById("summary").innerHTML = policeData.criminal_history;
         $('#info-modal').modal('toggle');
-        document.getElementById("markAsDone").onclick=sendRequest(this.id,gramaId,token);
+        //document.getElementById("markAsDone").onclick=sendRequest(this.id,gramaId,token);
       })
 
 
