@@ -39,7 +39,7 @@ var adminAuth = AsgardeoAuth.AsgardeoSPAClient.getInstance();
     adminAuth.signIn({ callOnlyOnRedirect: true }).then(Response => {
         adminAuth.getAccessToken().then(response => {
             console.log(response);
-            createRecords();
+            createRecords(response);
             
         }).catch(error=>{
             adminAuth.trySignInSilently();
@@ -59,16 +59,20 @@ var adminAuth = AsgardeoAuth.AsgardeoSPAClient.getInstance();
         })
 
     }
-function createRecords(){
+function createRecords(token){
   adminAuth.getBasicUserInfo().then((userinfoResponse) => {
     console.log(userinfoResponse); // check userinfo response
     var gramaId= userinfoResponse.gramaIdentification;
     axios.post(gramaURL+"Fetch-Pending-Requests",{
       officer_id:gramaId
+    },{
+      headers:{
+        'Authorization': `Bearer ${token}`
+      }
     }).then(response=>{
       console.log(response);
       var userData = response.data.filterd_certificate_data;
-      createRequests(userData);
+      createRequests(userData,token,gramaId);
 
 
 
@@ -84,7 +88,7 @@ function createRecords(){
 
 
 }
-function createRequests(arr){
+function createRequests(arr,token,gramaId){
   body = document.getElementById("requestTable");
   for(var i=0;i<arr.length;i++){
     var content =  document.createElement("tr");
@@ -106,7 +110,13 @@ function createRequests(arr){
       $('#info-modal').modal('toggle');
       sessionStorage.setItem("nic",this.id);
       axios.post(gramaURL+"Fetch-Certificate-Details",{
-        user_nic:this.id
+        user_nic:this.id,
+        officer_id:gramaId
+      },{
+        headers:{
+          'Authorization': `Bearer ${token}`
+        }
+        
       }).then(response=>{
         //User Data
         document.getElementById("name").innerHTML=response.data.certificate_data.user_full_name;
