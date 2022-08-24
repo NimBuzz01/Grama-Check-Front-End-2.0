@@ -108,7 +108,7 @@ function createRequests(arr,token,gramaId){
     content.id=arr[i].user_nic;
     content.onclick= function(){
       
-      sessionStorage.setItem("nic",this.id);
+     
       axios.post(gramaURL+"Fetch-Certificate-Details",{
         user_nic:this.id,
         officer_id:gramaId
@@ -138,7 +138,7 @@ function createRequests(arr,token,gramaId){
         document.getElementById("officer").innerHTML = policeData.police_officer_id;
         document.getElementById("summary").innerHTML = policeData.criminal_history;
         $('#info-modal').modal('toggle');
-
+        document.getElementById("markAsDone").onclick=sendRequest(this.id,gramaId,token);
       })
 
 
@@ -147,6 +147,20 @@ function createRequests(arr,token,gramaId){
     
 
   }
+
+}
+
+function sendRequest(idNumber,gramaId,token){
+
+  axios.put(gramaURL+"Update-Certificate-Status",{
+    user_nic:this.id,
+    officer_id:gramaId
+  },{
+    headers:{
+      'Authorization': `Bearer ${token}`
+    }
+
+  })
 
 }
 
