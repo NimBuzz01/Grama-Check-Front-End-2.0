@@ -165,6 +165,7 @@ function sendRequest(idNumber,gramaId,token){
   }).then(response=>{
     var id = document.getElementById(idNumber);
     document.getElementById("requestTable").removeChild(id);
+    $('#info-modal').modal('toggle');
     
   })
 
