@@ -124,7 +124,7 @@ function createRequests(arr){
 
         document.getElementById("caseNumber").innerHTML = policeData.report_number;
         document.getElementById("severity").innerHTML = policeData.suspect_severity;
-        document.getElementById("caseDate").innerHTML = "";
+       
         document.getElementById("officer").innerHTML = policeData.police_officer_id;
         document.getElementById("summary").innerHTML = policeData.criminal_history;
 
