@@ -87,7 +87,8 @@ function createRecords(){
 function createRequests(arr){
   body = document.getElementById("requestTable");
   for(var i=0;i<arr.length;i++){
-    document.getElementById("requestTable").append('<tr href="#info-modal" data-bs-toggle="modal" class="requests">');
+    var content =  document.createElement("tr");
+
     var name = document.createElement("th");
     name.appendChild(document.createTextNode(arr[i].user_full_name));
     var nic = document.createElement("th");
@@ -96,11 +97,15 @@ function createRequests(arr){
     address.appendChild(document.createTextNode(arr[i].user_provided_address));
     var mobile = document.createElement("th");
     mobile.appendChild(document.createTextNode(arr[i].user_phone_number));
-    body.appendChild(name);
-    body.appendChild(nic);
-    body.appendChild(address);
-    body.appendChild(mobile);
-    document.getElementById('</tr>')
+    content.appendChild(name);
+    content.appendChild(nic);
+    content.appendChild(address);
+    content.appendChild(mobile);
+    content.onclick= function(){
+      $('#info-modal').modal('toggle');
+
+    }
+    body.appendChild(content);
     
 
   }
