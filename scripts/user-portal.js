@@ -131,7 +131,8 @@ function validate(){
   const token = sessionStorage.getItem("token");
   event.preventDefault();
   debugger
-  if (document.getElementById("captcha-form").value == code) {
+  // if (document.getElementById("captcha-form").value == code) {
+  console.log(idNumber)
   axios.post(gramaURL+"Identity-Check",{
     user_nic:idNumber
   },{
@@ -185,13 +186,13 @@ function validate(){
 
 
 
-    } else {
-      Swal.fire("Invalid Captcha");
-      createCaptcha();
-    }
+//     } else {
+//       Swal.fire("Invalid Captcha");
+//       createCaptcha();
+//     }
 
 
 
 
-};
+ };
 
