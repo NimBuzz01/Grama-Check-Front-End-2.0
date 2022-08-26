@@ -134,9 +134,9 @@ function validate(){
   if (document.getElementById("captcha-form").value == code) {
   axios.post(gramaURL+"Identity-Check",{
     user_nic:idNumber
-  }<{
+  },{
     headers:{
-      auth:token
+      'auth': `Bearer ${token}`
     }
     }).then(idResponse=>{
         axios.post(gramaURL+"Image-Upload",{
