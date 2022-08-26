@@ -140,10 +140,10 @@ function validate(){
       'auth': `Bearer ${token}`
     }
     }).then(idResponse=>{
-        axios.post(gramaURL+"Image-Upload",{
-          formData:formdata1,
-          user_nic:idNumber
-        },{
+        axios.post(gramaURL+"Image-Upload",
+          formdata1
+          // user_nic:idNumber
+        ,{
           headers:{
             'auth': `Bearer ${token}`
           }
