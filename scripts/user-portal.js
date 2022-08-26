@@ -144,7 +144,7 @@ function validate(){
           user_nic:idNumber
         },{
           headers:{
-            auth:token
+            'auth': `Bearer ${token}`
           }
         }).then(response => {
             axios.post(gramaURL+"Address-Check",{
@@ -155,11 +155,15 @@ function validate(){
               user_address_proof_image:postid3
             },{
               headers:{
-                auth:token
+                'auth': `Bearer ${token}`
               }
             }).then(response=>{
                 axios.post(gramaURL+'Police-Check',{
                   user_nic:idNumber
+                },{
+                  headers:{
+                    'auth': `Bearer ${token}`
+                  }
                 }).then(finalResponse=>{
                   console.log(finalResponse);
                 })
