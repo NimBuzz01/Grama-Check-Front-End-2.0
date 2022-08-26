@@ -101,13 +101,13 @@ function validate(){
 
 
 
-  let inputElem1 = document.getElementById("imgfile1");
+  let inputElem1 = document.getElementById("imagefile1");
   let file1 = inputElem1.files[0];
 
-  let inputElem2 = document.getElementById("imgfile2");
+  let inputElem2 = document.getElementById("imagefile2");
   let file2 = inputElem2.files[0];
 
-  let inputElem3 = document.getElementById("imgfile3");
+  let inputElem3 = document.getElementById("imagefile3");
   let file3 = inputElem3.files[0];
 
  
