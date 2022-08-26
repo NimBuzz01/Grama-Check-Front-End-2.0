@@ -141,7 +141,7 @@ function validate(){
     }
     }).then(idResponse=>{
         axios.post(gramaURL+"Image-Upload",
-          formdata1
+          formData1
           // user_nic:idNumber
         ,{
           headers:{
