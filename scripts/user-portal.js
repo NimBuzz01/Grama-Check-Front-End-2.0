@@ -1,3 +1,6 @@
+gramaURL = 'https://grama-app-gateway-28whvhuc.wl.gateway.dev/';
+
+
 // Sweet Alerts
 // const preLoadAlert = () => {
 //   Swal.fire({
@@ -20,6 +23,8 @@
 // };
 
 // captcha code
+
+
 var code;
 function createCaptcha() {
   //clear the contents of captcha div first 
@@ -45,18 +50,8 @@ function createCaptcha() {
   //storing captcha so that can validate you can save it somewhere else according to your specific requirements
   code = captcha.join("");
   document.getElementById("captcha").appendChild(canv); // adds the canvas to the body element
-}
-function validateCaptcha() {
-  event.preventDefault();
-  debugger
-  if (document.getElementById("captcha-form").value == code) {
-    Swal.fire("", "Valid Captcha!!", "success");
-    } else {
-      Swal.fire("Invalid Captcha");
-      createCaptcha();
-    }
-}
 
+}
 function getBasicUserInfo() {
   userAuth.getBasicUserInfo().then((userinfoResponse) => {
       console.log(userinfoResponse); // check userinfo response
@@ -89,3 +84,110 @@ userAuth.signIn({ callOnlyOnRedirect: true }).then(Response => {
 }).catch(error=>{
   userAuth.trySignInSilently();
 })
+
+
+function uuidv4() {
+  return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
+    (
+      c ^
+      (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
+    ).toString(16)
+  );
+}
+function validate(){
+  let postid1 = uuidv4();
+  let postid2 = uuidv4();
+  let postid3 = uuidv4();
+
+
+
+  let inputElem1 = document.getElementById("imgfile1");
+  let file1 = inputElem1.files[0];
+
+  let inputElem2 = document.getElementById("imgfile2");
+  let file2 = inputElem2.files[0];
+
+  let inputElem3 = document.getElementById("imgfile3");
+  let file3 = inputElem3.files[0];
+
+ 
+  let blob1 = file1.slice(0, file1.size, "image/jpeg");
+  newFile1 = new File([blob1], `${postid1}.jpeg`, { type: "image/jpeg" });
+
+  let blob2 = file2.slice(0, file2.size, "image/jpeg");
+  newFile2 = new File([blob2], `${postid2}.jpeg`, { type: "image/jpeg" });
+
+  let blob3 = file3.slice(0, file3.size, "image/jpeg");
+  newFile3 = new File([blob3], `${postid3}.jpeg`, { type: "image/jpeg" });
+
+
+  let formData1 = new FormData();
+  formData1.append("imgfile", newFile1);
+  formData1.append("imgfile", newFile2);
+  formData1.append("imgfile", newFile3);
+
+  const idNumber = document.getElementById("idNumber");
+  const address = document.getElementById("address");
+  const token = sessionStorage.getItem("token");
+  event.preventDefault();
+  debugger
+  if (document.getElementById("captcha-form").value == code) {
+  axios.post(gramaURL+"Identity-Check",{
+    user_nic:idNumber
+  }<{
+    headers:{
+      auth:token
+    }
+    }).then(idResponse=>{
+        axios.post(gramaURL+"Image-Upload",{
+          formData:formdata1,
+          user_nic:idNumber
+        },{
+          headers:{
+            auth:token
+          }
+        }).then(response => {
+            axios.post(gramaURL+"Address-Check",{
+              user_provided_address:address,
+              user_nic:idNumber,
+              user_nic_front_image:postid1,
+              user_nic_back_image:postid2,
+              user_address_proof_image:postid3
+            },{
+              headers:{
+                auth:token
+              }
+            }).then(response=>{
+                axios.post(gramaURL+'Police-Check',{
+                  user_nic:idNumber
+                }).then(finalResponse=>{
+                  console.log(finalResponse);
+                })
+
+
+            }).catch(error=>{
+              console.log(error)
+            })   
+
+            }).catch(error=>{
+              console.log(error);
+            })
+
+
+  }).catch(error=>{
+    console.log(error)
+    swal.fire("Invalid ID")
+  })    
+
+
+
+    } else {
+      Swal.fire("Invalid Captcha");
+      createCaptcha();
+    }
+
+
+
+
+};
+

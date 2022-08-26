@@ -48,7 +48,7 @@
         <h1>Apply for Grama Certificate</h1>
         <div class="container py-5">
             <div class="form-field">
-                <input onkeyup="this.setAttribute('value', this.value);" value="" id="nic" class="input-text"
+                <input onkeyup="this.setAttribute('value', this.value);" value="" id="idNumber" class="input-text"
                     type="text" name="">
                 <label for="nic" class="label">National Identity Card</label>
             </div>
@@ -59,15 +59,15 @@
             </div>
             <div class="form-field">
                 <label for="nic-img-f" class="form-label">Upload NIC (Front)</label>
-                <input class="form-control" type="file" id="nic-img-f" accept="image/png, image/jpg">
+                <input class="form-control" type="file" id="imagefile1" accept="image/png, image/jpg">
             </div>
             <div class="form-field">
                 <label for="nic-img-b" class="form-label">Upload NIC (Back)</label>
-                <input class="form-control" type="file" id="nic-img-b" accept="image/png, image/jpg">
+                <input class="form-control" type="file" id="imagefile2" accept="image/png, image/jpg">
             </div>
             <div class="form-field">
                 <label for="address-image" class="form-label">Upload Proof of Address</label>
-                <input class="form-control" type="file" id="address-image" accept="image/png, image/jpg">
+                <input class="form-control" type="file" id="imagefile3" accept="image/png, image/jpg">
             </div>
             <div class="form-field">
                 <label for="captcha-input" class="form-label">Enter Captcha</label>
@@ -84,7 +84,7 @@
             </div>
         </div>
         <div class="form-field" id="submit-btn">
-            <button class="btn btn-primary px-5 py-2" id="submit-btn-f" onclick="validateCaptcha()">Submit</button>
+            <button class="btn btn-primary px-5 py-2" id="submit-btn-f" onclick="validate()">Submit</button>
         </div>
         </div>
         <article class="bg-dark text-light p-5 text-center text-c">
@@ -162,6 +162,7 @@
 <script src="https://unpkg.com/@asgardeo/auth-spa@latest/dist/asgardeo-spa.production.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="scripts/user-portal.js"></script>
 
 </html>
