@@ -126,8 +126,8 @@ function validate(){
   formData1.append("imgfile", newFile2);
   formData1.append("imgfile", newFile3);
 
-  const idNumber = document.getElementById("idNumber");
-  const address = document.getElementById("address");
+  const idNumber = document.getElementById("idNumber").value;
+  const address = document.getElementById("address").value;
   const token = sessionStorage.getItem("token");
   event.preventDefault();
   debugger
