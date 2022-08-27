@@ -130,7 +130,7 @@ function createRequests(arr,token,gramaId){
         document.getElementById("secDivision").innerHTML = userData.user_sec_division;
         document.getElementById("user_nic_front").src=userData.user_nic_front_image;
         document.getElementById("user_nic_back").src=userData.user_nic_back_image;
-        document.getElementById("userAddress").src=userData.user_address_proof_image;
+        document.getElementById("user_Address").src=userData.user_address_proof_image;
         
         //Police data
         var policeData = response.data.certificate_data.police_data;
