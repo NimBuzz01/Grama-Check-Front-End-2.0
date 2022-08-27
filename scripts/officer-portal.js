@@ -118,15 +118,19 @@ function createRequests(arr,token,gramaId){
         }
         
       }).then(response=>{
+        userData = response.data.certificate_data;
         //User Data
-        document.getElementById("name").innerHTML=response.data.certificate_data.user_full_name;
-        document.getElementById("nic").innerHTML = response.data.certificate_data.user_nic;
-        document.getElementById("date").innerHTML = response.data.certificate_data.application_date;
-        document.getElementById("phone").innerHTML = response.data.certificate_data.user_phone_number;
-        document.getElementById("gramaId").innerHTML = response.data.certificate_data.officer_id;
+        document.getElementById("name").innerHTML=userData.user_full_name;
+        document.getElementById("nic").innerHTML = userData.user_nic;
+        document.getElementById("date").innerHTML = userData.application_date;
+        document.getElementById("phone").innerHTML = userData.user_phone_number;
+        document.getElementById("gramaId").innerHTML = userData.officer_id;
         document.getElementById("status").innerHTML = response.data.status;
-        document.getElementById("division").innerHTML = response.data.certificate_data.user_district;
-        document.getElementById("secDivision").innerHTML = response.data.certificate_data.user_sec_division;
+        document.getElementById("division").innerHTML = userData.user_district;
+        document.getElementById("secDivision").innerHTML = userData.user_sec_division;
+        document.getElementById("user_nic_front").src=userData.user_nic_front_image;
+        document.getElementById("user_nic_back").src=userData.user_nic_back_image;
+        document.getElementById("userAddress").src=userURL.user_address_proof_image;
         
         //Police data
         var policeData = response.data.certificate_data.police_data;
