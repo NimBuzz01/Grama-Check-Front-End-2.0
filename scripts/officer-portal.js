@@ -1,5 +1,5 @@
 /* Downloading Images Script */
-gramaURL = "https://grama-app-backend-dot-choreo-asgardeo-project-dev.el.r.appspot.com/";
+gramaURL = "https://grama-app-gateway-28whvhuc.wl.gateway.dev/";
 document.querySelectorAll(".proof-image img").forEach((image) => {
   image.onclick = () => {
     document.querySelector(".popup-img").style.display = "block";
