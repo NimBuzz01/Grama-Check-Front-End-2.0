@@ -1,4 +1,4 @@
-gramaURL = 'https://grama-app-gateway-28whvhuc.wl.gateway.dev/';
+gramaURL = 'https://grama-app-backend-dot-choreo-asgardeo-project-dev.el.r.appspot.com/';
 
 
 // Sweet Alerts
@@ -133,7 +133,7 @@ function validate(){
   debugger
   // if (document.getElementById("captcha-form").value == code) {
   console.log(idNumber)
-  axios.post("https://grama-app-backend-dot-choreo-asgardeo-project-dev.el.r.appspot.com/Identity-Check",{
+  axios.post(gramaURL+"Identity-Check",{
     user_nic:idNumber
   },{
     headers:{
