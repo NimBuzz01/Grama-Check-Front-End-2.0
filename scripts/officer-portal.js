@@ -67,7 +67,7 @@ function createRecords(token){
       officer_id:gramaId
     },{
       headers:{
-        'Authorization': `Bearer ${token}`
+        'auth': `Bearer ${token}`
       }
     }).then(response=>{
       console.log(response);
@@ -114,7 +114,7 @@ function createRequests(arr,token,gramaId){
         officer_id:gramaId
       },{
         headers:{
-          'Authorization': `Bearer ${token}`
+          'auth': `Bearer ${token}`
         }
         
       }).then(response=>{
@@ -159,7 +159,7 @@ function sendRequest(idNumber,gramaId,token){
     officer_id:gramaId
   },{
     headers:{
-      'Authorization': `Bearer ${token}`
+      'auth': `Bearer ${token}`
     }
 
   }).then(response=>{

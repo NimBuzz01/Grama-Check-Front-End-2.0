@@ -5,6 +5,10 @@ function submit(){
     console.log(nic);
     axios.post(userURL+"Status-Check",{
         user_nic:nic
+},{
+    headers:{
+        'auth': `Bearer ${token}`
+    }
 }
     
     ).then(response=>{
