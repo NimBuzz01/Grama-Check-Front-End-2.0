@@ -38,7 +38,7 @@ var adminAuth = AsgardeoAuth.AsgardeoSPAClient.getInstance();
 
     adminAuth.signIn({ callOnlyOnRedirect: true }).then(Response => {
         adminAuth.getAccessToken().then(response => {
-            console.log(response);
+            
             Swal.fire({
               text: "Please wait",
               imageUrl:
@@ -67,9 +67,15 @@ var adminAuth = AsgardeoAuth.AsgardeoSPAClient.getInstance();
 
     }
 function createRecords(token){
-
+  Swal.fire({
+    text: "Please wait",
+    imageUrl:
+      "https://www.epgdlaw.com/wp-content/uploads/2017/09/ajax-loader.gif",
+    showConfirmButton: false,
+    allowOutsideClick: false,
+  })
   adminAuth.getBasicUserInfo().then((userinfoResponse) => {
-    console.log(userinfoResponse); // check userinfo response
+  
     var gramaId= userinfoResponse.gramaIdentification;
     axios.post(gramaURL+"Fetch-Pending-Requests",{
       officer_id:gramaId
@@ -78,7 +84,7 @@ function createRecords(token){
         'auth': `Bearer ${token}`
       }
     }).then(response=>{
-      console.log(response);
+      
       var userData = response.data.filterd_certificate_data;
       createRequests(userData,token,gramaId);
 

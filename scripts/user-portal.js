@@ -50,7 +50,7 @@ function createCaptcha() {
 }
 function getBasicUserInfo() {
   userAuth.getBasicUserInfo().then((userinfoResponse) => {
-      console.log(userinfoResponse); // check userinfo response
+     // check userinfo response
       // check email
 
   }).catch((error) => {
@@ -71,7 +71,7 @@ userAuth.initialize({
 
 userAuth.signIn({ callOnlyOnRedirect: true }).then(Response => {
   userAuth.getAccessToken().then(response => {
-      console.log(response);
+      
       getBasicUserInfo();
       userAuth.getAccessToken().then(token=>{
         sessionStorage.setItem("token",token);
@@ -150,7 +150,7 @@ function validate(){
   event.preventDefault();
   debugger
   // if (document.getElementById("captcha-form").value == code) {
-  console.log(idNumber)
+
   axios.post(gramaURL+"Identity-Check",{
     user_nic:idNumber
   },{
