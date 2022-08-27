@@ -89,6 +89,13 @@ function createRecords(token){
 
 }
 function createRequests(arr,token,gramaId){
+  Swal.fire({
+    text: "Please wait",
+    imageUrl:
+      "https://www.epgdlaw.com/wp-content/uploads/2017/09/ajax-loader.gif",
+    showConfirmButton: false,
+    allowOutsideClick: false,
+  })
   body = document.getElementById("requestTable");
   for(var i=0;i<arr.length;i++){
     var content =  document.createElement("tr");
@@ -150,7 +157,7 @@ function createRequests(arr,token,gramaId){
 
     }
     body.appendChild(content);
-    
+    Swal.close();
 
   }
 
