@@ -39,6 +39,13 @@ var adminAuth = AsgardeoAuth.AsgardeoSPAClient.getInstance();
     adminAuth.signIn({ callOnlyOnRedirect: true }).then(Response => {
         adminAuth.getAccessToken().then(response => {
             console.log(response);
+            Swal.fire({
+              text: "Please wait",
+              imageUrl:
+                "https://www.epgdlaw.com/wp-content/uploads/2017/09/ajax-loader.gif",
+              showConfirmButton: false,
+              allowOutsideClick: false,
+            })
             createRecords(response);
             
         }).catch(error=>{
@@ -60,6 +67,7 @@ var adminAuth = AsgardeoAuth.AsgardeoSPAClient.getInstance();
 
     }
 function createRecords(token){
+
   adminAuth.getBasicUserInfo().then((userinfoResponse) => {
     console.log(userinfoResponse); // check userinfo response
     var gramaId= userinfoResponse.gramaIdentification;
@@ -89,13 +97,7 @@ function createRecords(token){
 
 }
 function createRequests(arr,token,gramaId){
-  Swal.fire({
-    text: "Please wait",
-    imageUrl:
-      "https://www.epgdlaw.com/wp-content/uploads/2017/09/ajax-loader.gif",
-    showConfirmButton: false,
-    allowOutsideClick: false,
-  })
+  
   body = document.getElementById("requestTable");
   for(var i=0;i<arr.length;i++){
     var content =  document.createElement("tr");
