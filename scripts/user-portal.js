@@ -2,25 +2,21 @@ gramaURL = 'https://grama-app-backend-dot-choreo-asgardeo-project-dev.el.r.appsp
 
 
 // Sweet Alerts
-// const preLoadAlert = () => {
-//   Swal.fire({
-//     title: "Submitting...",
-//     text: "Please wait",
-//     imageUrl:
-//       "https://www.epgdlaw.com/wp-content/uploads/2017/09/ajax-loader.gif",
-//     showConfirmButton: false,
-//     allowOutsideClick: false,
-//   }).then((result) => {
-//     if (result.isConfirmed) {
-//       reqTest();
-//     }
-//   });
+const preLoadAlert = () => {
+  Swal.fire({
+    title: "Submitting...",
+    text: "Please wait",
+    imageUrl:
+      "https://www.epgdlaw.com/wp-content/uploads/2017/09/ajax-loader.gif",
+    showConfirmButton: false,
+    allowOutsideClick: false,
+  })
+};
+  const reqTest = () => {
+    Swal.close();
+    Swal.fire("Request Submitted!");
+  };
 
-//   const reqTest = () => {
-//     Swal.close();
-//     Swal.fire("Request Submitted!");
-//   };
-// };
 
 // captcha code
 
@@ -94,7 +90,31 @@ function uuidv4() {
     ).toString(16)
   );
 }
+
+function validation(nic) {
+  var result = false;
+  if (nic.length === 10 && !isNaN(nic.substr(0, 9)) && isNaN(nic.substr(9, 1).toLowerCase()) && ['x', 'v'].includes(nic.substr(9, 1).toLowerCase())) {
+      result = true;
+  } else if (nic.length === 12 && !isNaN(nic)) {
+      result = true;
+  } else {
+      result = false;
+  }
+  return result;
+}
 function validate(){
+  if (document.getElementById("captcha-form").value == code) {
+  preLoadAlert();
+  const idNumber = document.getElementById("idNumber").value;
+  const address = document.getElementById("address").value;
+  const token = sessionStorage.getItem("token");
+  if(!validation(idNumber)){
+    Swal.close();
+    Swal.fire("Invalid NIC!");
+    return;
+  }
+
+
   let postid1 = uuidv4();
   let postid2 = uuidv4();
   let postid3 = uuidv4();
@@ -126,9 +146,7 @@ function validate(){
   formData1.append("imgfile", newFile2);
   formData1.append("imgfile", newFile3);
 
-  const idNumber = document.getElementById("idNumber").value;
-  const address = document.getElementById("address").value;
-  const token = sessionStorage.getItem("token");
+
   event.preventDefault();
   debugger
   // if (document.getElementById("captcha-form").value == code) {
@@ -167,11 +185,14 @@ function validate(){
                   }
                 }).then(finalResponse=>{
                   console.log(finalResponse);
+                  Swal.close();
+                  Swal.fire("Request Submitted");
                 })
 
 
             }).catch(error=>{
               console.log(error)
+             
             })   
 
             }).catch(error=>{
@@ -181,15 +202,15 @@ function validate(){
 
   }).catch(error=>{
     console.log(error)
-    // swal.fire("Invalid ID")
+    swal.fire("Invalid ID")
   })    
 
 
 
-//     } else {
-//       Swal.fire("Invalid Captcha");
-//       createCaptcha();
-//     }
+    } else {
+      Swal.fire("Invalid Captcha");
+      createCaptcha();
+    }
 
 
 
