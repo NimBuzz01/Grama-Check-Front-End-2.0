@@ -162,7 +162,7 @@ function createRequests(arr,token,gramaId){
         document.getElementById("severity").innerHTML = policeData.suspect_severity;
        
         document.getElementById("officer").innerHTML = policeData.police_officer_id;
-        var summary  = policeData.police_officer_id;
+        var summary  = policeData.criminal_history;
         if(summary==="N/A"){
           document.getElementById("summary").innerHTML = "N/A";
           console.log(" no summary")
