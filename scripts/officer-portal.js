@@ -163,6 +163,7 @@ function createRequests(arr,token,gramaId){
        
         document.getElementById("officer").innerHTML = policeData.police_officer_id;
         var summary  = policeData.criminal_history;
+        console.log(summary);
         if(summary==="N/A"){
           document.getElementById("summary").innerHTML = "N/A";
           console.log(" no summary")
