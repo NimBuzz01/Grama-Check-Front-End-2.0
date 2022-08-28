@@ -14,6 +14,8 @@ function submit(){
     ).then(response=>{
         
         changeStatus(response.data.status);
+    }).catch(error=>{
+        Swal.fire("Invalid NIC!");
     })
 
 
