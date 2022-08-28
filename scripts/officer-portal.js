@@ -162,12 +162,10 @@ function createRequests(arr,token,gramaId){
           sendRequest(idNumber,gramaId,token);
         }
       }).catch(error=>{
-        if(error.message==="Invalid officer id or No new records exists"){
+        
           swal.close();
           swal.fire("No records exist");
-        }else{
-          swal.close();
-        }
+        
         
       })
 
