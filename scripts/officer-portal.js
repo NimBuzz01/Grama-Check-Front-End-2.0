@@ -169,12 +169,12 @@ function createRequests(arr,token,gramaId){
           console.log(" no summary")
 
         }else{
-          console.log("1");
+          
           records=summary.split(",");
           var list = document.createElement("ul");
-          console.log("2");
+          
           for(var i=0;i<records.length;i++){
-            console.log("3");
+            
             var info = records[i];
             info = info.replace("{","");
             info = info.replace("}","");
@@ -182,9 +182,10 @@ function createRequests(arr,token,gramaId){
             info = info.replace("(",",");
             moreInfo = info.split(",");
             console.log("4");
-            info[0] = info[0].bold();
+            moreInfo[0] = moreInfo[0].bold();
+            console.log(moreInfo);
             var record = document.createElement("li");
-            record.appendChild(document.createTextNode(info.join(":")));
+            record.appendChild(document.createTextNode(moreInfo.join(":")));
             console.log("5");
             list.append(record);
             console.log(info);
