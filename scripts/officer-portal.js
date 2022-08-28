@@ -165,6 +165,7 @@ function createRequests(arr,token,gramaId){
         var summary  = policeData.police_officer_id;
         if(summary==="N/A"){
           document.getElementById("summary").innerHTML = "N/A";
+          console.log(" no summary")
 
         }else{
           records=summary.split(",");
