@@ -163,17 +163,18 @@ function createRequests(arr,token,gramaId){
        
         document.getElementById("officer").innerHTML = policeData.police_officer_id;
         var summary  = policeData.criminal_history;
-        console.log(summary);
+        
         if(summary==="N/A"){
           document.getElementById("summary").innerHTML = "N/A";
           console.log(" no summary")
 
         }else{
+          document.getElementById("summary").innerHTML="";
           
           records=summary.split(",");
           var list = document.createElement("ul");
           var line = document.createElement("hr");
-          document.getElementById("summary").append(line);
+          document.getElementById("summary").appendChild(line);
           
           for(var i=0;i<records.length;i++){
             
