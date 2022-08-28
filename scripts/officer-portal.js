@@ -172,6 +172,8 @@ function createRequests(arr,token,gramaId){
           
           records=summary.split(",");
           var list = document.createElement("ul");
+          var line = document.createElement("hr");
+          document.getElementById("summary").append(line);
           
           for(var i=0;i<records.length;i++){
             
@@ -181,14 +183,18 @@ function createRequests(arr,token,gramaId){
             info = info.replace(")","");
             info = info.replace("(",",");
             moreInfo = info.split(",");
-            console.log("4");
-            
-            console.log(moreInfo);
+
             var record = document.createElement("li");
-            record.appendChild(document.createTextNode(moreInfo[1].bold()+":"+moreInfo[0]));
-            console.log("5");
+            var date = document.createElement("p");
+            date.style.fontWeight="bold";
+            date.appendChild(document.createTextNode(moreInfo[1]));
+            var detail = document.createElement("p");
+            detail.appendChild(document.createTextNode(moreInfo[0]));
+            record.appendChild(date);
+            record.appendChild(detail);
+            
             list.append(record);
-            console.log(info);
+            
 
 
           }
