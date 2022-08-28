@@ -147,7 +147,8 @@ function createRequests(arr,token,gramaId){
         document.getElementById("date").innerHTML = userData.application_date;
         document.getElementById("phone").innerHTML = userData.user_phone_number;
         document.getElementById("gramaId").innerHTML = userData.officer_id;
-        document.getElementById("status").innerHTML = response.data.status;
+        document.getElementById("actualAddress").innerHTML = userData.user_full_address;
+        document.getElementById("providedAddress").innerHTML = userData.user_provided_address;
         document.getElementById("division").innerHTML = userData.user_district;
         document.getElementById("secDivision").innerHTML = userData.user_sec_division;
         document.getElementById("user_nic_front").src=userData.user_nic_front_image;
