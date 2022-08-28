@@ -97,7 +97,7 @@ function createRecords(token){
 
       
         Swal.close();
-        Swal.fire("No record exist");
+        Swal.fire("No records exist");
       
         
     });
