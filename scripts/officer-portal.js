@@ -182,10 +182,10 @@ function createRequests(arr,token,gramaId){
             info = info.replace("(",",");
             moreInfo = info.split(",");
             console.log("4");
-            moreInfo[0] = moreInfo[0].bold();
+            
             console.log(moreInfo);
             var record = document.createElement("li");
-            record.appendChild(document.createTextNode(moreInfo.join(":")));
+            record.appendChild(document.createTextNode(moreInfo[1].bold()+":"+moreInfo[0]));
             console.log("5");
             list.append(record);
             console.log(info);
