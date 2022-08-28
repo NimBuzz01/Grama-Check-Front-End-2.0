@@ -95,12 +95,10 @@ function createRecords(token){
 
     }).catch((error) => {
 
-      if(error.message==="Invalid officer id or No new records exists"){
+      
         Swal.close();
         Swal.fire("No record exist");
-       }else{
-        Swal.close();
-       }
+      
         
     });
 
