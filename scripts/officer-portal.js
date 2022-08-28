@@ -71,6 +71,14 @@ function createRecords(token){
   adminAuth.getBasicUserInfo().then((userinfoResponse) => {
   
     var gramaId= userinfoResponse.gramaIdentification;
+    Swal.fire({
+      text: "Please wait",
+      imageUrl:
+        "https://www.epgdlaw.com/wp-content/uploads/2017/09/ajax-loader.gif",
+      showConfirmButton: false,
+      allowOutsideClick: false,
+    })
+    
     axios.post(gramaURL+"Fetch-Pending-Requests",{
       officer_id:gramaId
     },{
@@ -91,20 +99,20 @@ function createRecords(token){
 
 
 }).catch((error) => {
+
+  if(error.message==="Invalid officer id or No new records exists"){
+    Swal.close();
+    Swal.fire("No record exist");
+   }else{
+    Swal.close();
+   }
     
 });
 
 
 }
 function createRequests(arr,token,gramaId){
-  Swal.fire({
-    text: "Please wait",
-    imageUrl:
-      "https://www.epgdlaw.com/wp-content/uploads/2017/09/ajax-loader.gif",
-    showConfirmButton: false,
-    allowOutsideClick: false,
-  })
-  
+
   body = document.getElementById("requestTable");
   for(var i=0;i<arr.length;i++){
     var content =  document.createElement("tr");
@@ -163,12 +171,7 @@ function createRequests(arr,token,gramaId){
         }
       }).catch(error=>{
         
-         if(error.message==="Invalid officer id or No new records exists"){
-          Swal.close();
-          Swal.fire("No record exist");
-         }else{
-          Swal.close();
-         }
+       
         
         
       })
