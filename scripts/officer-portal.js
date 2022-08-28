@@ -120,7 +120,7 @@ function createRequests(arr,token,gramaId){
     var nic = document.createElement("th");
     nic.appendChild(document.createTextNode(arr[i].user_nic));
     var address = document.createElement("th");
-    address.appendChild(document.createTextNode(arr[i].user_provided_address));
+    address.appendChild(document.createTextNode(arr[i].user_provided_address));//user_full_address
     var mobile = document.createElement("th");
     mobile.appendChild(document.createTextNode(arr[i].user_phone_number));
     content.appendChild(name);
@@ -162,7 +162,31 @@ function createRequests(arr,token,gramaId){
         document.getElementById("severity").innerHTML = policeData.suspect_severity;
        
         document.getElementById("officer").innerHTML = policeData.police_officer_id;
-        document.getElementById("summary").innerHTML = policeData.criminal_history;
+        var summary  = policeData.police_officer_id;
+        if(summary==="N/A"){
+          document.getElementById("summary").innerHTML = "N/A";
+
+        }else{
+          records=summary.split(",");
+          var list = document.createElement("ul");
+          for(var i=0;i<records.length;i++){
+            var info = records[i];
+            info = info.replace("{","");
+            info = info.replace("}","");
+            info = info.replace(")","");
+            info = info.replace("(",",");
+            moreInfo = info.split(",");
+            info[0] = info[0].bold();
+            var record = document.createElement("li");
+            record.appendChild(document.createTextNode(info.join(":")));
+            list.append(record);
+
+
+
+          }
+          document.getElementById("summary").append(list);
+
+        }
         $('#info-modal').modal('toggle');
         document.getElementById("markAsDone").onclick=function(){
           sendRequest(idNumber,gramaId,token);
@@ -184,6 +208,13 @@ function createRequests(arr,token,gramaId){
 }
 
 function sendRequest(idNumber,gramaId,token){
+  Swal.fire({
+    text: "Please wait",
+    imageUrl:
+      "https://www.epgdlaw.com/wp-content/uploads/2017/09/ajax-loader.gif",
+    showConfirmButton: false,
+    allowOutsideClick: false,
+  })
 
   axios.put(gramaURL+"Update-Certificate-Status",{
     user_nic:idNumber,
@@ -199,7 +230,7 @@ function sendRequest(idNumber,gramaId,token){
     $('#info-modal').modal('toggle');
     
   })
-
+  Swal.close();
 }
 
 
