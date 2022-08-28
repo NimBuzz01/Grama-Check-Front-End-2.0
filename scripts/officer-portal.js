@@ -120,7 +120,7 @@ function createRequests(arr,token,gramaId){
     var nic = document.createElement("th");
     nic.appendChild(document.createTextNode(arr[i].user_nic));
     var address = document.createElement("th");
-    address.appendChild(document.createTextNode(arr[i].user_provided_address));//user_full_address
+    address.appendChild(document.createTextNode(arr[i].user_full_address));//user_full_address
     var mobile = document.createElement("th");
     mobile.appendChild(document.createTextNode(arr[i].user_phone_number));
     content.appendChild(name);
@@ -180,7 +180,7 @@ function createRequests(arr,token,gramaId){
             var record = document.createElement("li");
             record.appendChild(document.createTextNode(info.join(":")));
             list.append(record);
-
+            console.log(info);
 
 
           }
