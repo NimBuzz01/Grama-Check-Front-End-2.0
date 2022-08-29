@@ -1,4 +1,4 @@
-gramaURL = 'https://grama-app-backend-dot-choreo-asgardeo-project-dev.el.r.appspot.com/';
+gramaURL = 'https://grama-app-gateway-28whvhuc.wl.gateway.dev/';
 
 
 // Sweet Alerts
@@ -202,7 +202,8 @@ function validate(){
 
   }).catch(error=>{
     console.log(error)
-    swal.fire("Invalid ID")
+    Swal.close
+    Swal.fire("Invalid ID")
   })    
 
 
