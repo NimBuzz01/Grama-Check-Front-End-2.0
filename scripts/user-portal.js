@@ -191,12 +191,16 @@ function validate(){
 
 
             }).catch(error=>{
-              console.log(error)
+              console.log(error);
+              Swal.close;
+              Swal.fire("Image-upload Fail")
              
             })   
 
             }).catch(error=>{
               console.log(error);
+              Swal.close;
+              Swal.fire("Address-Check Fail");
             })
 
 
