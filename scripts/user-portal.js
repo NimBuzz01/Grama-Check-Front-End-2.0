@@ -149,7 +149,11 @@ function validate(){
 
   event.preventDefault();
   debugger
+<<<<<<< HEAD
   if (document.getElementById("captcha-form").value == code) {
+=======
+//   if (document.getElementById("captcha-form").value == code) {
+>>>>>>> 78da5aa999a0a1f240b26d2af123720bf8c990db
 
   axios.post(gramaURL+"Identity-Check",{
     user_nic:idNumber
