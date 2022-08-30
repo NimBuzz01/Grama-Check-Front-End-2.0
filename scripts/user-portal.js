@@ -1,4 +1,4 @@
-gramaURL = 'https://grama-app-gateway-50qdi0pj.wl.gateway.dev';
+gramaURL = 'https://grama-app-gateway-50qdi0pj.wl.gateway.dev/';
 
 
 // Sweet Alerts
