@@ -1,4 +1,4 @@
-gramaURL = 'https://grama-app-backend-dot-choreo-asgardeo-intern-project.de.r.appspot.com/';
+gramaURL = 'https://grama-app-gateway-50qdi0pj.wl.gateway.dev/';
 
 
 // Sweet Alerts
