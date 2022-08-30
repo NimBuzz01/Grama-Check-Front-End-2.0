@@ -1,4 +1,3 @@
-
 function uuidv4() {
   return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
     (
@@ -13,8 +12,6 @@ document.getElementById("submitBtn").addEventListener("click", () => {
   let postid2 = uuidv4();
   let postid3 = uuidv4();
 
-
-
   let inputElem1 = document.getElementById("imgfile1");
   let file1 = inputElem1.files[0];
 
@@ -24,7 +21,6 @@ document.getElementById("submitBtn").addEventListener("click", () => {
   let inputElem3 = document.getElementById("imgfile3");
   let file3 = inputElem3.files[0];
 
- 
   let blob1 = file1.slice(0, file1.size, "image/jpeg");
   newFile1 = new File([blob1], `${postid1}.jpeg`, { type: "image/jpeg" });
 
@@ -34,20 +30,18 @@ document.getElementById("submitBtn").addEventListener("click", () => {
   let blob3 = file3.slice(0, file3.size, "image/jpeg");
   newFile3 = new File([blob3], `${postid3}.jpeg`, { type: "image/jpeg" });
 
-
   let formData1 = new FormData();
   formData1.append("imgfile", newFile1);
   formData1.append("imgfile", newFile2);
   formData1.append("imgfile", newFile3);
 
-
   axios
-    .post("https://grama-app-gateway-28whvhuc.wl.gateway.dev/Image-Upload", formData1)
+    .post(
+      "https://grama-app-gateway-28whvhuc.wl.gateway.dev/Image-Upload",
+      formData1
+    )
     .then((response) => {
       console.log("done");
     })
     .catch((error) => console.error(error));
 });
-
-
-// https://storage.cloud.google.com/choreo-asgardeo-project-dev.appspot.com/postid1.jpeg

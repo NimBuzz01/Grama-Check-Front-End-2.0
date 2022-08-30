@@ -221,3 +221,7 @@ canvas {
     background: #fff;
     cursor: pointer;
 }
+
+#logout-btn {
+    cursor: pointer;
+}

@@ -29,7 +29,7 @@
                         <a class="nav-link" href="check-status.html">Check Status</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" onclick="userAuth.signOut()">Log Out</a>
+                        <a class="nav-link" id="logout-btn" onclick="userAuth.signOut()">Log Out</a>
                     </li>
                 </ul>
             </div>
@@ -43,7 +43,7 @@
             <div class="form-field">
                 <input onkeyup="this.setAttribute('value', this.value);" value="" id="idNumber" class="input-text"
                     type="text" name="">
-                <label for="nic" class="label">National Identity Card</label>
+                <label for="idNumber" class="label">National Identity Card</label>
             </div>
             <div class="form-field">
                 <input onkeyup="this.setAttribute('value', this.value);" value="" id="address" class="input-text"
