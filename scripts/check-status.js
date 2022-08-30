@@ -1,4 +1,4 @@
-const userURL = 'https://grama-app-gateway-50qdi0pj.wl.gateway.dev'
+const userURL = 'https://grama-app-gateway-50qdi0pj.wl.gateway.dev/'
 const token = sessionStorage.getItem("token");
 function submit(){
     nic = document.getElementById("nicField").value;
