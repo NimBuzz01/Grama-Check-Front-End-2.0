@@ -136,13 +136,24 @@ function validate() {
 
     let inputElem1 = document.getElementById("imagefile1");
     let file1 = inputElem1.files[0];
-    console.log(file1);
 
     let inputElem2 = document.getElementById("imagefile2");
     let file2 = inputElem2.files[0];
 
     let inputElem3 = document.getElementById("imagefile3");
     let file3 = inputElem3.files[0];
+
+    if(file1===undefined||file2===undefined||file3===undefined){
+      Swal.close();
+      Swal.fire({
+        title: "Please provide 3 images ",
+        icon: "error",
+        confirmButtonColor: "#ff7300",
+        confirmButtonText: "OK",
+      });
+      return;
+    }
+
 
     let blob1 = file1.slice(0, file1.size, "image/jpeg");
     newFile1 = new File([blob1], `${postid1}.jpeg`, { type: "image/jpeg" });
