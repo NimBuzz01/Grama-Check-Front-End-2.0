@@ -143,7 +143,7 @@ function validate() {
     let inputElem3 = document.getElementById("imagefile3");
     let file3 = inputElem3.files[0];
 
-    if(file1===undefined||file2===undefined||file3===undefined||idNumber===""||address===""){
+    if(file1===undefined||file2===undefined||file3===undefined||idNumber==""||address==""){
       Swal.close();
       Swal.fire({
         title: "Please fill relevant fields!",
