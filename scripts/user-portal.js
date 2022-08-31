@@ -1,5 +1,5 @@
-// gramaURL = "https://production-50qdi0pj.wl.gateway.dev/";
-gramaURL = "https://grama-app-backend-dot-choreo-asgardeo-intern-project.de.r.appspot.com/";
+gramaURL = "https://production-grama-app-88dwvjly.wl.gateway.dev";
+// gramaURL = "https://grama-app-backend-dot-choreo-asgardeo-intern-project.de.r.appspot.com/";
 
 // Sweet Alerts
 const preLoadAlert = () => {
