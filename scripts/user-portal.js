@@ -136,6 +136,7 @@ function validate() {
 
     let inputElem1 = document.getElementById("imagefile1");
     let file1 = inputElem1.files[0];
+    console.log(file1);
 
     let inputElem2 = document.getElementById("imagefile2");
     let file2 = inputElem2.files[0];
