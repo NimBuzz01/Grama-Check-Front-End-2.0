@@ -143,10 +143,10 @@ function validate() {
     let inputElem3 = document.getElementById("imagefile3");
     let file3 = inputElem3.files[0];
 
-    if(file1===undefined||file2===undefined||file3===undefined){
+    if(file1===undefined||file2===undefined||file3===undefined||idNumber===""||address===""){
       Swal.close();
       Swal.fire({
-        title: "Please provide 3 images ",
+        title: "Please fill relevant fields!",
         icon: "error",
         confirmButtonColor: "#ff7300",
         confirmButtonText: "OK",
