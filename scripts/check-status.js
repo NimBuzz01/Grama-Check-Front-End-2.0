@@ -1,5 +1,5 @@
-// userURL = "https://production-50qdi0pj.wl.gateway.dev/";
-userURL = "https://grama-app-backend-dot-choreo-asgardeo-intern-project.de.r.appspot.com/";
+userURL = "https://production-grama-app-88dwvjly.wl.gateway.dev";
+// userURL = "https://grama-app-backend-dot-choreo-asgardeo-intern-project.de.r.appspot.com/";
 const token = sessionStorage.getItem("token");
 function submit() {
   nic = document.getElementById("nicField").value;
