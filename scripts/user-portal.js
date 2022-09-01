@@ -226,7 +226,7 @@ function validate() {
                       }
                     )
                     .then((finalResponse) => {
-                      console.log(finalResponse);
+                      
                       Swal.close();
                       Swal.fire({
                         title: "Request Submitted!",
