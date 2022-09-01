@@ -37,5 +37,10 @@ function changeStatus(Status) {
     }
   }
   id = "status-" + Status;
-  document.getElementById(id).className = "step-wizard-item current-item";
+  if(Status!=="4"){
+    document.getElementById(id).className = "step-wizard-item current-item";
+
+  }
+
+  
 }
